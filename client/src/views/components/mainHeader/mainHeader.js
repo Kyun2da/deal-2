@@ -45,5 +45,3 @@ const mainHeader = {
 };
 
 export default mainHeader;
-
-// 카테고리 아이콘, 맵 핀, 유저 , 메뉴
