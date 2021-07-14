@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   border: none;
+  box-sizing: border-box;
 }
 
 :root {
@@ -17,4 +18,12 @@
 
 body {
   font-family: 'Noto Sans KR';
+}
+
+#root {
+  border: 1px solid var(--grey3);
+  margin: auto;
+  margin-top: 40px;
+  width: 400px;
+  height: 90vh;
 }
