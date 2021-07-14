@@ -3,11 +3,13 @@ import error404 from './views/pages/error404';
 import utils from './services/utils';
 import login from './views/pages/login';
 import './views/styles/pages/common.css';
+import category from './views/pages/category';
 
 // List of supported routes. Any url other than these routes will throw a 404 error
 const routes = {
   '/': main,
   '/login': login,
+  '/category': category,
   // '/p/:id': PostShow,
   // '/register': Register,
 };

@@ -1,10 +1,3 @@
-const icon = {
-  render: async (src = '', alt = '') => {
-    const view = `<img src=${src} alt=${alt}/>`;
-    return view;
-  },
-
-  afterRender: async () => {},
-};
+import icon from './icon';
 
 export default icon;

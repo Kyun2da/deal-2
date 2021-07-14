@@ -1,0 +1,15 @@
+.main-page {
+  position: relative;
+}
+
+.product-list {
+  height: calc(90vh - 58px);
+  overflow: auto;
+}
+
+.FAB-container {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  z-index: 1;
+}
