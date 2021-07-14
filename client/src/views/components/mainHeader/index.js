@@ -1,13 +1,11 @@
 import icon from '../icon';
+import './index.css';
 
 const mainHeader = {
   render: async () => {
-    const categoryIcon = await icon.render('src/images/category.svg');
+    // const categoryIcon = await icon.render('src/images/category.svg');
     const view = /* html */ `
-                <section class="section">
-                ${categoryIcon}
-                    <h1> 메인 헤더3 </h1>
-                </section>
+                <header class="main-header"></header>
             `;
     return view;
   },
@@ -15,3 +13,5 @@ const mainHeader = {
 };
 
 export default mainHeader;
+
+// 카테고리 아이콘, 맵 핀, 유저 , 메뉴
