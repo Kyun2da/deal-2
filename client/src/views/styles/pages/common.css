@@ -1,0 +1,20 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+:root {
+  --title-active: #222222;
+  --Grey1: #888888;
+  --Grey2: #bbbbbb;
+  --Grey3: #d7d7d7;
+  --off-white: #f6f6f6;
+  --white: #ffffff;
+  --primary: #2ac1bc;
+  --error: #f45452;
+}
+
+body {
+  font-family: 'Noto Sans KR';
+}

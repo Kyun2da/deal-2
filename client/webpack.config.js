@@ -16,6 +16,11 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'babel-loader',
       },
+      {
+        test: /\.css$/,
+        exclude: /node_modules/,
+        use: ['style-loader', 'css-loader'],
+      },
     ],
   },
   plugins: [
@@ -27,4 +32,7 @@ module.exports = {
       hash: true, // 정적 파일을 불러올 떄 쿼리문자열에 웹팩 해쉬값을 추가한다.
     }),
   ],
+  devServer: {
+    hot: true,
+  },
 };
