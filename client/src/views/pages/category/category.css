@@ -1,0 +1,6 @@
+.category-container {
+  margin: 20px;
+  display: grid;
+  justify-items: center;
+  grid-template-columns: 1fr 1fr 1fr;
+}
