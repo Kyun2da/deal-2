@@ -19,7 +19,7 @@ const main = {
       2
     );
 
-    const view = `<div class="${styles['main-page']}">
+    const view = `<div class="page ${styles['main-page']}">
                     ${header}
                     <section class="${styles['product-list']}">
                       ${categoryItem}
@@ -41,7 +41,7 @@ const main = {
     return view;
   },
   afterRender: async () => {
-    mainHeader.afterRender();
+    await mainHeader.afterRender();
   },
 };
 
