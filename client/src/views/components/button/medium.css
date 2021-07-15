@@ -1,0 +1,22 @@
+.button-medium {
+    width: 160px;
+    height: 48px;
+    border-radius: 8px;
+    padding: 8px 16px;
+    background-color: var(--primary);
+    text-align: center;
+    font-size: 18px;
+    color: var(--white);
+}
+
+.button-medium:hover {
+    background-color: var(--primary3);
+}
+
+.button-medium:focus {
+    border: 2px solid var(--primary2);
+}
+
+.button-medium:disabled {
+    background-color: var(--primary2);
+}

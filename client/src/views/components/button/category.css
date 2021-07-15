@@ -1,0 +1,14 @@
+.button-category {
+    width: 90px;
+    height: 32px;
+    font-size: 16px;
+    color: var(--grey1);
+    background-color: var(--white);
+    border: 1px solid var(--grey3);
+    border-radius: 999px;
+}
+
+.button-category:active {
+    background-color: var(--primary);
+    color: var(--white);
+}

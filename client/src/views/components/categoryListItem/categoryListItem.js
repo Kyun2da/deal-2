@@ -17,18 +17,18 @@ const categoryListItem = {
     const heartIcon = await icon.render(
       'src/images/heart.svg',
       '좋아요',
-      styles['heart-icon']
+      styles.icon
     );
     const emptyHeartIcon = await icon.render(
       'src/images/empty-heart.svg',
       '좋아요',
-      styles['empty-heart-icon']
+      styles.icon
     );
 
     const chatIcon = await icon.render(
       'src/images/message-square.svg',
       '채팅 아이콘',
-      styles['chat-icon']
+      styles.icon
     );
 
     let topRightIcon;
@@ -36,7 +36,7 @@ const categoryListItem = {
       const kebabIcon = await icon.render(
         'src/images/more-vertical.svg',
         '더보기 아이콘',
-        styles['kebab-icon']
+        styles.icon
       );
       topRightIcon = kebabIcon;
     } else if (isLike) {
