@@ -1,8 +1,8 @@
 import icon from '../icon';
 import imgBox from '../imgBox/imgBox';
-import styles from './categoryListItem.css';
+import styles from './productListItem.css';
 
-const categoryListItem = {
+const productListItem = {
   render: async (
     isSellerItem,
     img,
@@ -76,4 +76,4 @@ const categoryListItem = {
   afterRender: async () => {},
 };
 
-export default categoryListItem;
+export default productListItem;
