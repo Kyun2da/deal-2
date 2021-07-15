@@ -1,0 +1,35 @@
+.img-box {
+  display: block;
+  border: 1px solid var(--grey3);
+  background-color: var(--off-white);
+}
+
+.small {
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+}
+
+.medium {
+  width: 76px;
+  height: 76px;
+  border-radius: 8px;
+}
+
+.large {
+  width: 120px;
+  height: 120px;
+  border-radius: 12px;
+}
+
+.gradient {
+  width: 320px;
+  height: 320px;
+  background-color: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.24) 0%,
+    rgba(0, 0, 0, 0) 16.52%,
+    rgba(0, 0, 0, 0) 87.36%,
+    rgba(0, 0, 0, 0.24) 100%
+  );
+}
