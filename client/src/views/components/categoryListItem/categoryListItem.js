@@ -1,4 +1,5 @@
 import icon from '../icon';
+import imgBox from '../imgBox/imgBox';
 import styles from './categoryListItem.css';
 
 const categoryListItem = {
@@ -44,10 +45,10 @@ const categoryListItem = {
       topRightIcon = emptyHeartIcon;
     }
 
+    const imgBoxItem = await imgBox.render(img, '이미지', 'large');
+
     const view = `<article class="${styles['item-container']}">
-                    <div class="{${styles['image-container']}">
-                        <img src=${img} alt="이미지" class="${styles['product-image']}"/>
-                    </div>
+                    ${imgBoxItem}
                     <div class="${styles['content-container']}">
                         <div class="${styles['content-top']}">
                             <div>
