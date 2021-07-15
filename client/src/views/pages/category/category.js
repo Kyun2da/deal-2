@@ -1,8 +1,22 @@
+import icon from '../../components/icon/icon';
+import menuHeader from '../../components/menuHeader';
 import categoryListItem from '../../components/categoryListItem';
 import styles from './category.css';
 
 const category = {
   render: async () => {
+    const backIcon = await icon.render(
+      'src/images/chevron-left.svg',
+      '뒤로 가기'
+    );
+
+    const categoryHeader = await menuHeader.render(
+      '#/',
+      backIcon,
+      null,
+      '카테고리',
+      'off-white'
+    );
     const categoryData = [
       { img: 'src/mockup/image.png', title: '디지털기기' },
       { img: 'src/mockup/image.png', title: '생활가전' },
@@ -24,8 +38,7 @@ const category = {
       // eslint-disable-next-line no-await-in-loop
       categoryItems += await categoryListItem.render(item);
     }
-
-    const view = `<div class="page category-page"><div class="${styles['category-container']}">${categoryItems}</div></div>`;
+    const view = `<div class="page category-page">${categoryHeader}<div class="${styles['category-container']}">${categoryItems}</div></div>`;
 
     return view;
   },
