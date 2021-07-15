@@ -1,7 +1,7 @@
 import mainHeader from '../../components/mainHeader';
 import categoryListItem from '../../components/categoryListItem';
 import styles from './main.css';
-import FAB from '../../components/FAB';
+import { FAB } from '../../components/button';
 
 const main = {
   render: async () => {
