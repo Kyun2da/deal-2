@@ -23,7 +23,7 @@ body {
   background-color: var(--white);
 }
 
-#root {
+:global #root {
   border: 1px solid var(--grey3);
   margin: auto;
   margin-top: 40px;
