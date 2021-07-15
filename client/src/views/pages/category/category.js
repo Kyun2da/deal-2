@@ -1,15 +1,25 @@
+import icon from '../../components/icon/icon';
+import menuHeader from '../../components/menuHeader';
+
 const category = {
   render: async () => {
-    const view = `<div class="page category-page">카테고리 페이지<button class="back-btn">뒤로가기</button></div>`;
+    const backIcon = await icon.render(
+      'src/images/chevron-left.svg',
+      '뒤로 가기'
+    );
+
+    const categoryHeader = await menuHeader.render(
+      '#/',
+      backIcon,
+      null,
+      '카테고리',
+      'off-white'
+    );
+    const view = `<div class="page category-page">${categoryHeader}</div>`;
 
     return view;
   },
-  afterRender: async () => {
-    const backBtn = document.querySelector('.back-btn');
-    backBtn.addEventListener('click', () => {
-      window.history.back();
-    });
-  },
+  afterRender: async () => {},
 };
 
 export default category;
