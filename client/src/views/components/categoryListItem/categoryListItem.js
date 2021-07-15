@@ -6,7 +6,7 @@ const categoryListItem = {
     const imgItem = await imgBox.render(img, title, 'small');
     const view = `<div class="${styles.container}">
                     ${imgItem}
-                    <div>${title}</div>
+                    <div class="${styles.title}">${title}</div>
                   </div>`;
     return view;
   },
