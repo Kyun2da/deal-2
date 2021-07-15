@@ -1,6 +1,6 @@
 import mainHeader from '../../components/mainHeader';
 import categoryListItem from '../../components/categoryListItem';
-import './main.css';
+import styles from './main.css';
 import FAB from '../../components/FAB';
 
 const main = {
@@ -9,7 +9,7 @@ const main = {
     const FABBtn = await FAB.render();
     const categoryItem = await categoryListItem.render(
       0,
-      './mockup/image.png',
+      'src/mockup/image.png',
       '파랑 선풍기',
       '역삼동',
       '2시간 전',
@@ -19,9 +19,9 @@ const main = {
       2
     );
 
-    const view = `<div class="main-page">
+    const view = `<div class="${styles['main-page']}">
                     ${header}
-                    <section class="product-list">
+                    <section class="${styles['product-list']}">
                       ${categoryItem}
                       ${categoryItem}
                       ${categoryItem}
@@ -33,7 +33,7 @@ const main = {
                       ${categoryItem}
                       ${categoryItem}
                     </section>
-                    <div class="FAB-container">
+                    <div class="${styles['FAB-container']}">
                       ${FABBtn}
                     </div>
                   </div>`;

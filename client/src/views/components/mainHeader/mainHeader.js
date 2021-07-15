@@ -1,39 +1,39 @@
 import icon from '../icon';
-import './mainHeader.css';
+import styles from './mainHeader.css';
 
 const mainHeader = {
   render: async () => {
     const categoryIcon = await icon.render(
       'src/images/category.svg',
       '카테고리',
-      'category-icon'
+      styles['category-icon']
     );
     const mapPinIcon = await icon.render(
       'src/images/map-pin.svg',
       '맵 핀',
-      'map-pin-icon'
+      styles['map-pin-icon']
     );
     const userIcon = await icon.render(
       'src/images/user.svg',
       '유저 정보',
-      'user-icon'
+      styles['user-icon']
     );
     const menuIcon = await icon.render(
       'src/images/menu.svg',
       '메뉴',
-      'menu-icon'
+      styles['menu-icon']
     );
 
     const view = `
-                <header class="main-header">
+                <header class="${styles['main-header']}">
                   <a href="#/category">
                     ${categoryIcon}
                   </a>
-                  <div class="map-container">
+                  <div class="${styles['map-container']}">
                     ${mapPinIcon}
-                    <span class="town-name">역삼동</span>
+                    <span class="${styles['town-name']}">역삼동</span>
                   </div>
-                  <div class="right-icons">
+                  <div class="${styles['right-icons']}">
                     ${userIcon}
                     ${menuIcon}
                   </div>

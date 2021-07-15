@@ -1,5 +1,5 @@
 import icon from '../icon';
-import './categoryListItem.css';
+import styles from './categoryListItem.css';
 
 const categoryListItem = {
   render: async (
@@ -16,18 +16,18 @@ const categoryListItem = {
     const heartIcon = await icon.render(
       'src/images/heart.svg',
       '좋아요',
-      'heart-icon'
+      styles['heart-icon']
     );
     const emptyHeartIcon = await icon.render(
       'src/images/empty-heart.svg',
       '좋아요',
-      'empty-heart-icon'
+      styles['empty-heart-icon']
     );
 
     const chatIcon = await icon.render(
       'src/images/message-square.svg',
       '채팅 아이콘',
-      'chat-icon'
+      styles['chat-icon']
     );
 
     let topRightIcon;
@@ -35,7 +35,7 @@ const categoryListItem = {
       const kebabIcon = await icon.render(
         'src/images/more-vertical.svg',
         '더보기 아이콘',
-        'kebab-icon'
+        styles['kebab-icon']
       );
       topRightIcon = kebabIcon;
     } else if (isLike) {
@@ -44,22 +44,22 @@ const categoryListItem = {
       topRightIcon = emptyHeartIcon;
     }
 
-    const view = `<article class="item-container">
-                    <div class="image-container">
-                        <img src=${img} alt="이미지" class="product-image"/>
+    const view = `<article class="${styles['item-container']}">
+                    <div class="{${styles['image-container']}">
+                        <img src=${img} alt="이미지" class="${styles['product-image']}"/>
                     </div>
-                    <div class="content-container">
-                        <div class="content-top">
+                    <div class="${styles['content-container']}">
+                        <div class="${styles['content-top']}">
                             <div>
-                                <div class="title">${title}</div>
-                                <div class="loc-time">${town} ∙ ${locTime}</div>
-                                <div class="price">${price}</div>
+                                <div class="${styles.title}">${title}</div>
+                                <div class="${styles['loc-time']}">${town} ∙ ${locTime}</div>
+                                <div class="${styles.price}">${price}</div>
                             </div>
                             <div>
                                 ${topRightIcon}
                             </div>
                         </div>
-                        <div class="content-down">
+                        <div class="${styles['content-down']}">
                             <div>
                               ${chatIcon} ${chatCount}
                             </div>
