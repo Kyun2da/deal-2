@@ -1,0 +1,16 @@
+.button-status {
+    width: 100px;
+    height: 40px;
+    border-radius: 8px;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: var(--white);
+    border: 1px solid #E0E0E0
+}
+
+.status-image {
+    width: 14px;
+    height: 8px;
+}
