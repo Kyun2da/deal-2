@@ -1,0 +1,9 @@
+.main-dropdown-element {
+    background-color: inherit;
+    width: 180px;
+    height: 54px;
+    border-bottom: 1px solid var(--grey2);
+    padding: 10px 20px;
+    text-align: left;
+    font-size: 16px;
+}
