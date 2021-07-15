@@ -1,8 +1,8 @@
-import './icon.css';
+import styles from './icon.css';
 
 const icon = {
   render: async (src = '', alt = '', classname = '') => {
-    const view = `<img src=${src} alt=${alt} class="icon ${classname}" />`;
+    const view = `<img src=${src} alt=${alt} class="${styles.icon} ${classname}" />`;
     return view;
   },
 

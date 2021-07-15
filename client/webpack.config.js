@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   entry: {
@@ -18,8 +19,15 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        exclude: /node_modules/,
-        use: ['style-loader', 'css-loader'],
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+            },
+          },
+        ],
       },
     ],
   },
@@ -30,6 +38,9 @@ module.exports = {
         env: process.env.NODE_ENV === 'development' ? '(개발용)' : '',
       },
       hash: true, // 정적 파일을 불러올 떄 쿼리문자열에 웹팩 해쉬값을 추가한다.
+    }),
+    new MiniCssExtractPlugin({
+      filename: 'style.css',
     }),
   ],
   devServer: {
