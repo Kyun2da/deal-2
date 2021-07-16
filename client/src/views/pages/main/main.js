@@ -1,5 +1,5 @@
 import mainHeader from '../../components/mainHeader';
-import categoryListItem from '../../components/categoryListItem';
+import productListItem from '../../components/productListItem';
 import styles from './main.css';
 import { FAB } from '../../components/button';
 
@@ -7,7 +7,7 @@ const main = {
   render: async () => {
     const header = await mainHeader.render();
     const FABBtn = await FAB.render();
-    const categoryItem = await categoryListItem.render(
+    const categoryItem = await productListItem.render(
       0,
       'src/mockup/image.png',
       '파랑 선풍기',
