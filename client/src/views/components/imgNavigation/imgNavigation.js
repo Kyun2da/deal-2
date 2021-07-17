@@ -1,6 +1,6 @@
+import changeActiveComponent from '../../../services/changeActiveComponent';
 import imgNav from '../imgNav/imgNav';
 import './imgNavigation.css';
-import changeActiveImgNav from '../../../services/changeActiveImgNav';
 
 const imgNavigation = {
   render: async (count, selected = 0) => {
@@ -18,9 +18,11 @@ const imgNavigation = {
     return view;
   },
 
-  after_render: async () => {
+  afterRender: async () => {
     const $imgNavi = document.querySelector('.img-navigation');
-    $imgNavi.addEventListener('click', changeActiveImgNav);
+    $imgNavi.addEventListener('click', (e) =>
+      changeActiveComponent('.img-navigation', e)
+    );
   },
 };
 
