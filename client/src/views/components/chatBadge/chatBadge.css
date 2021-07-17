@@ -1,21 +1,14 @@
 .chat-badge {
   background-color: var(--primary3);
   color: var(--white);
-  font-size: 12px;
+  font-size: 14px;
   text-align: center;
   margin-left: 12px;
   border-radius: 999px;
   height: 20px;
+  padding: 0 6px;
 }
 
-.chat-badge.single-digit {
-  width: 20px;
-}
-
-.chat-badge.ten-digits {
-  width: 28px;
-}
-
-.chat-badge.hundred-digits {
-  width: 36px;
+.chat-badge.count {
+  max-width: fit-content;
 }
