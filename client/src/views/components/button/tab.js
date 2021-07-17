@@ -1,6 +1,6 @@
-import './tap.css';
+import './tab.css';
 
-const tap = {
+const tab = {
   render: async (text) => {
     const view = `
         <Button class="button-tap">
@@ -14,4 +14,4 @@ const tap = {
   afterRender: async () => {},
 };
 
-export default tap;
+export default tab;
