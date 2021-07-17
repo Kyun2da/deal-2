@@ -18,7 +18,7 @@ const imgNavigation = {
     return view;
   },
 
-  after_render: async () => {
+  afterRender: async () => {
     const $imgNavi = document.querySelector('.img-navigation');
     $imgNavi.addEventListener('click', changeActiveImgNav);
   },
