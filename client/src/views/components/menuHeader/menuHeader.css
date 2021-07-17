@@ -7,25 +7,25 @@
   padding: 0 16px;
 }
 
-.menu-header .white {
+.menu-header.white {
   background-color: var(--white);
   border-bottom: 1px solid var(--grey3);
 }
 
-.menu-header .white .back-icon {
+.menu-header.white .back-icon {
   background-color: var(--white);
 }
 
-.menu-header .off-white {
+.menu-header.off-white {
   background-color: var(--off-white);
   border-bottom: 1px solid var(--grey3);
 }
 
-.menu-header .off-white .back-icon {
+.menu-header.off-white .back-icon {
   background-color: var(--off-white);
 }
 
-.menu-header .invisible {
+.menu-header.invisible {
   background-color: var(--white);
   background-color: rgba(255, 255, 255, 0.5);
 }
