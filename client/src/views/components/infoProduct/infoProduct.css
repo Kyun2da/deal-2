@@ -1,0 +1,25 @@
+.info-product {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+  border-bottom: 1px solid var(--grey3);
+}
+
+.info-product .info-product-detail {
+  display: flex;
+}
+
+.info-product .info-product-text {
+  margin-left: 16px;
+}
+
+.info-product .price {
+  color: var(--grey3);
+}
+
+.info-product .is-selling {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 12px 20px;
+  font-size: 16px;
+}
