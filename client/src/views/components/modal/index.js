@@ -1,3 +1,4 @@
 import dropdown from './dropdown';
+import alert from './alert';
 
-export default dropdown;
+export { dropdown, alert };
