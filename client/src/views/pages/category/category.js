@@ -38,7 +38,12 @@ const category = {
       // eslint-disable-next-line no-await-in-loop
       categoryItems += await categoryListItem.render(item);
     }
-    const view = `<div class="page category-page">${categoryHeader}<div class="category-container">${categoryItems}</div></div>`;
+    const view = `<div class="page category-page">
+                    ${categoryHeader}
+                    <div class="category-container">
+                      ${categoryItems}
+                    </div>
+                  </div>`;
 
     return view;
   },
