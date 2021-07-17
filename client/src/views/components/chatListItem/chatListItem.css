@@ -1,0 +1,35 @@
+.chat-list-item {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--grey3);
+  padding: 16px;
+}
+
+.chat-list-item .chat-right-item {
+  display: flex;
+}
+
+.chat-list-item .username {
+  margin: 8px 0;
+  color: var(--title-active);
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.chat-list-item .message {
+  color: var(--grey1);
+  font-size: 18px;
+}
+
+.chat-list-item .time-badge-container {
+  margin-right: 24px;
+}
+
+.chat-list-item .timestamp {
+  margin: 10px 0;
+  color: var(--grey1);
+}
+
+.chat-list-item .chat-badge {
+  float: right;
+}
