@@ -4,25 +4,25 @@
   background-color: var(--off-white);
 }
 
-.small {
+.img-box.small {
   width: 40px;
   height: 40px;
   border-radius: 4px;
 }
 
-.medium {
+.img-box.medium {
   width: 76px;
   height: 76px;
   border-radius: 8px;
 }
 
-.large {
+.img-box.large {
   width: 120px;
   height: 120px;
   border-radius: 12px;
 }
 
-.gradient {
+.img-box.gradient {
   width: 320px;
   height: 320px;
   background-color: linear-gradient(

@@ -23,7 +23,7 @@ body {
   background-color: var(--white);
 }
 
-:global #root {
+#root {
   border: 1px solid var(--grey3);
   width: 435px;
   margin: auto;
@@ -32,16 +32,16 @@ body {
   overflow: hidden;
 }
 
-:global .page {
+.page {
   min-width: 435px;
 }
 
-:global .empty {
+.empty {
   min-width: 435px;
   height: 90vh;
 }
 
-:global #slide {
+#slide {
   min-width: 435px;
   display: flex;
   transform: translateX(-100%);

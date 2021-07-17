@@ -1,4 +1,4 @@
-import styles from './dropdown.css';
+import './dropdown.css';
 import dropdownElement from './dropdownElement';
 
 const dropdown = {
@@ -10,7 +10,7 @@ const dropdown = {
       childNodes += await dropdownElement.render(child);
     }
     const view = `
-        <div class="${styles['main-dropdown']}">
+        <div class="main-dropdown">
             ${childNodes}
         </div>
     `;

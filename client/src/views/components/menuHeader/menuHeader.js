@@ -1,17 +1,17 @@
-import styles from './menuHeader.css';
+import './menuHeader.css';
 
 const menuHeader = {
   render: async (link, frontIcon, backIcon, title = '', color = 'white') => {
     const backIconItem = backIcon
-      ? `<button class="${styles['back-icon']}">${backIcon}</button>`
-      : `<div class="${styles['empty-container']}"></div>`;
+      ? `<button class="back-icon">${backIcon}</button>`
+      : `<div class="empty-container"></div>`;
 
     const view = `
-                <header class="${styles['menu-header']} ${styles[color]}" >
-                  <a href="${link}" class="${styles['front-icon']}" >
+                <header class="menu-header ${color}" >
+                  <a href="${link}" class="front-icon" >
                     ${frontIcon}
                   </a>
-                  <div class="${styles.title}">
+                  <div class="title">
                     ${title}
                   </div>
                   ${backIconItem}

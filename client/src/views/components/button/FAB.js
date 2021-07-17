@@ -1,15 +1,15 @@
 import icon from '../icon';
-import styles from './FAB.css';
+import './FAB.css';
 
 const FAB = {
   render: async () => {
     const plusIcon = await icon.render(
       'src/images/add.svg',
       'FAB',
-      styles['FAB-image']
+      'FAB-image'
     );
     const view = `
-        <Button class="${styles['FAB-btn']}">
+        <Button class="FAB-btn">
             ${plusIcon}
         </Button>
     `;

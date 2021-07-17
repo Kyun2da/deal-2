@@ -1,12 +1,12 @@
-.container {
+.category-list-item {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 120px;
+  width: 130px;
   height: 160px;
 }
 
-.title {
+.category-list-item .title {
   margin-top: 12px;
 }

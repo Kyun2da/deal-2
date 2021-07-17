@@ -1,9 +1,9 @@
-import styles from './category.css';
+import './category.css';
 
 const category = {
   render: async (text) => {
     const view = `
-        <Button class="${styles['button-category']}">
+        <Button class="button-category">
             ${text || ''}
         </Button>
     `;

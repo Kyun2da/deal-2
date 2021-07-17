@@ -1,6 +1,6 @@
 import mainHeader from '../../components/mainHeader';
 import productListItem from '../../components/productListItem';
-import styles from './main.css';
+import './main.css';
 import { FAB } from '../../components/button';
 
 const main = {
@@ -19,9 +19,9 @@ const main = {
       2
     );
 
-    const view = `<div class="page ${styles['main-page']}">
+    const view = `<div class="page main-page">
                     ${header}
-                    <section class="${styles['product-list']}">
+                    <section class="product-list">
                       ${categoryItem}
                       ${categoryItem}
                       ${categoryItem}
@@ -33,7 +33,7 @@ const main = {
                       ${categoryItem}
                       ${categoryItem}
                     </section>
-                    <div class="${styles['FAB-container']}">
+                    <div class="FAB-container">
                       ${FABBtn}
                     </div>
                   </div>`;

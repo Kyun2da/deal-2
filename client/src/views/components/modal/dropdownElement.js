@@ -1,9 +1,9 @@
-import styles from './dropdownElement.css';
+import './dropdownElement.css';
 
 const dropdownElement = {
   render: async (text) => {
     const view = `
-        <Button class="${styles['main-dropdown-element']}">
+        <Button class="main-dropdown-element">
             ${text || ''}
         </Button>
     `;

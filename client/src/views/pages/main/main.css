@@ -2,12 +2,12 @@
   position: relative;
 }
 
-.product-list {
+.main-page .product-list {
   height: calc(90vh - 58px);
   overflow: auto;
 }
 
-.FAB-container {
+.main-page .FAB-container {
   position: absolute;
   bottom: 40px;
   right: 40px;
