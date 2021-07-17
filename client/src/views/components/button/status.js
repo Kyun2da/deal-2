@@ -1,4 +1,4 @@
-import styles from './status.css';
+import './status.css';
 import icon from '../icon';
 
 const status = {
@@ -6,10 +6,10 @@ const status = {
     const selectIcon = await icon.render(
       'src/images/chevron-down.svg',
       '상태',
-      styles['status-image']
+      'status-image'
     );
     const view = `
-        <Button class="${styles['button-status']}">
+        <Button class="button-status">
             ${text || ''}
             ${selectIcon}
         </Button>

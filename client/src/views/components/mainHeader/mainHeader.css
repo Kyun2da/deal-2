@@ -14,12 +14,12 @@
   display: flex;
 }
 
-.map-pin-icon {
+.main-header .map-pin-icon {
   width: 24px;
   margin-right: 4px;
 }
 
-.map-container {
+.main-header .map-container {
   display: flex;
   align-items: center;
   font-size: 20px;
@@ -27,11 +27,11 @@
   cursor: pointer;
 }
 
-.user-icon {
+.main-header .user-icon {
   margin-right: 12px;
 }
 
-.right-icons {
+.main-header .right-icons {
   display: flex;
   align-items: center;
 }

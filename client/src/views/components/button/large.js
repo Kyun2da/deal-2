@@ -1,9 +1,9 @@
-import styles from './large.css';
+import './large.css';
 
 const large = {
   render: async (text) => {
     const view = `
-        <Button class="${styles['button-large']}">
+        <Button class="button-large">
             ${text || ''}
         </Button>
     `;

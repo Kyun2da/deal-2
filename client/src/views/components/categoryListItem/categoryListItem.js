@@ -1,12 +1,12 @@
 import imgBox from '../imgBox/imgBox';
-import styles from './categoryListItem.css';
+import './categoryListItem.css';
 
 const categoryListItem = {
   render: async ({ img, title }) => {
     const imgItem = await imgBox.render(img, title, 'small');
-    const view = `<div class="${styles.container}">
+    const view = `<div class="category-list-item">
                     ${imgItem}
-                    <div class="${styles.title}">${title}</div>
+                    <div class="title">${title}</div>
                   </div>`;
     return view;
   },

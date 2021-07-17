@@ -8,40 +8,40 @@
   border-bottom: none;
 }
 
-.content-container {
+.item-container .content-container {
   display: flex;
   flex-direction: column;
   width: 240px;
   margin-left: 20px;
 }
 
-.content-top {
+.item-container .content-top {
   display: flex;
   width: 100%;
   line-height: 28px;
   justify-content: space-between;
 }
 
-.content-down {
+.item-container .content-down {
   display: flex;
   width: 100%;
   margin-top: 12px;
   justify-content: flex-end;
 }
 
-.content-down .icon {
+.item-container .content-down .icon {
   width: 20px;
   margin-left: 10px;
 }
 
-.title {
+.item-container .title {
   font-size: 20px;
 }
 
-.loc-time {
+.item-container .loc-time {
   color: var(--grey1);
 }
 
-.price {
+.item-container .price {
   color: inherit;
 }

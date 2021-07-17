@@ -1,9 +1,9 @@
-import styles from './tap.css';
+import './tap.css';
 
 const tap = {
   render: async (text) => {
     const view = `
-        <Button class="${styles['button-tap']}">
+        <Button class="button-tap">
             ${text || ''}
         </Button>
     `;

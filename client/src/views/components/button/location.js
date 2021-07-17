@@ -1,4 +1,4 @@
-import styles from './location.css';
+import './location.css';
 import icon from '../icon';
 
 const location = {
@@ -6,15 +6,15 @@ const location = {
     const addIcon = await icon.render(
       'src/images/add-green.svg',
       '추가',
-      styles['location-image']
+      'location-image'
     );
     const removeIcon = await icon.render(
       'src/images/close-green.svg',
       '삭제',
-      styles['location-image']
+      'location-image'
     );
     const view = `
-        <Button class="${styles['button-location']}">
+        <Button class="button-location">
             ${text || ''}
             ${text ? removeIcon : addIcon}
         </Button>

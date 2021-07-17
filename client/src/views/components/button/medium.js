@@ -1,9 +1,9 @@
-import styles from './medium.css';
+import './medium.css';
 
 const medium = {
   render: async (text) => {
     const view = `
-        <Button class="${styles['button-medium']}">
+        <Button class="button-medium">
             ${text || ''}
         </Button>
     `;

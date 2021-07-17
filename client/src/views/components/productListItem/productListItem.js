@@ -1,6 +1,6 @@
 import icon from '../icon';
 import imgBox from '../imgBox/imgBox';
-import styles from './productListItem.css';
+import './productListItem.css';
 
 const productListItem = {
   render: async (
@@ -17,18 +17,18 @@ const productListItem = {
     const heartIcon = await icon.render(
       'src/images/heart.svg',
       '좋아요',
-      styles.icon
+      'icon'
     );
     const emptyHeartIcon = await icon.render(
       'src/images/empty-heart.svg',
       '좋아요',
-      styles.icon
+      'icon'
     );
 
     const chatIcon = await icon.render(
       'src/images/message-square.svg',
       '채팅 아이콘',
-      styles.icon
+      'icon'
     );
 
     let topRightIcon;
@@ -36,7 +36,7 @@ const productListItem = {
       const kebabIcon = await icon.render(
         'src/images/more-vertical.svg',
         '더보기 아이콘',
-        styles.icon
+        'icon'
       );
       topRightIcon = kebabIcon;
     } else if (isLike) {
@@ -47,20 +47,20 @@ const productListItem = {
 
     const imgBoxItem = await imgBox.render(img, '이미지', 'large');
 
-    const view = `<article class="${styles['item-container']}">
+    const view = `<article class="item-container">
                     ${imgBoxItem}
-                    <div class="${styles['content-container']}">
-                        <div class="${styles['content-top']}">
+                    <div class="content-container">
+                        <div class="content-top">
                             <div>
-                                <div class="${styles.title}">${title}</div>
-                                <div class="${styles['loc-time']}">${town} ∙ ${locTime}</div>
-                                <div class="${styles.price}">${price}</div>
+                                <div class="title">${title}</div>
+                                <div class="loc-time">${town} ∙ ${locTime}</div>
+                                <div class="price">${price}</div>
                             </div>
                             <div>
                                 ${topRightIcon}
                             </div>
                         </div>
-                        <div class="${styles['content-down']}">
+                        <div class="content-down">
                             <div>
                               ${chatIcon} ${chatCount}
                             </div>

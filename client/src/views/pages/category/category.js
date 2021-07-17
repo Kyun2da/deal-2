@@ -1,7 +1,7 @@
 import icon from '../../components/icon/icon';
 import menuHeader from '../../components/menuHeader';
 import categoryListItem from '../../components/categoryListItem';
-import styles from './category.css';
+import './category.css';
 
 const category = {
   render: async () => {
@@ -38,7 +38,7 @@ const category = {
       // eslint-disable-next-line no-await-in-loop
       categoryItems += await categoryListItem.render(item);
     }
-    const view = `<div class="page category-page">${categoryHeader}<div class="${styles['category-container']}">${categoryItems}</div></div>`;
+    const view = `<div class="page category-page">${categoryHeader}<div class="category-container">${categoryItems}</div></div>`;
 
     return view;
   },

@@ -7,39 +7,39 @@
   padding: 0 16px;
 }
 
-.white {
+.menu-header .white {
   background-color: var(--white);
   border-bottom: 1px solid var(--grey3);
 }
 
-.white .back-icon {
+.menu-header .white .back-icon {
   background-color: var(--white);
 }
 
-.off-white {
+.menu-header .off-white {
   background-color: var(--off-white);
   border-bottom: 1px solid var(--grey3);
 }
 
-.off-white .back-icon {
+.menu-header .off-white .back-icon {
   background-color: var(--off-white);
 }
 
-.invisible {
+.menu-header .invisible {
   background-color: var(--white);
   background-color: rgba(255, 255, 255, 0.5);
 }
 
-.front-icon,
-.back-icon {
+.menu-header .front-icon,
+.menu-header .back-icon {
   display: flex;
 }
 
-.empty-container {
+.menu-header .empty-container {
   width: 32px;
   height: 32px;
 }
 
-.title {
+.menu-header .title {
   font-size: 20px;
 }
