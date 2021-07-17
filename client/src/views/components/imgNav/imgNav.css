@@ -1,0 +1,16 @@
+.img-nav {
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  margin-right: 12px;
+  border: 1px solid var(--white);
+  cursor: pointer;
+}
+
+.active {
+  background-color: var(--white);
+}
+
+.inactive {
+  background-color: transparent;
+}
