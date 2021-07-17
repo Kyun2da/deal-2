@@ -1,0 +1,16 @@
+.chat-bubble {
+  display: inline-block;
+  font-size: 14px;
+  padding: 8px;
+}
+
+.chat-bubble.my-chat {
+  border: 1px solid var(--primary);
+  border-radius: 0px 8px 8px 8px;
+}
+
+.chat-bubble.others-chat {
+  color: var(--white);
+  background-color: var(--primary);
+  border-radius: 8px 0px 8px 8px;
+}
