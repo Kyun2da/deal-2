@@ -15,7 +15,7 @@ const tabBar = {
 
     return view;
   },
-  after_render: async () => {
+  afterRender: async () => {
     const $tabBar = document.querySelector('.tab-bar');
     $tabBar.addEventListener('click', (e) =>
       changeActiveComponent('.tab-bar', e)
