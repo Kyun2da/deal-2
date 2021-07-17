@@ -9,7 +9,7 @@ const imgNav = {
     return view;
   },
 
-  after_render: async () => {},
+  afterRender: async () => {},
 };
 
 export default imgNav;

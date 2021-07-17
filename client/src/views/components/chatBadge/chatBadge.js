@@ -6,7 +6,7 @@ const chatBadge = {
 
     return view;
   },
-  after_render: async () => {},
+  afterRender: async () => {},
 };
 
 export default chatBadge;
