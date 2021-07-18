@@ -32,6 +32,10 @@ const inputPopup = {
   },
 
   afterRender: async () => {
+    const className = '.input-popup';
+    const $popup = document.querySelector(className);
+    $popup.addEventListener('input', (e) => changeConfirmButton(className, e));
+  },
 };
 
 export default inputPopup;
