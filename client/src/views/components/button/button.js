@@ -1,9 +1,9 @@
-import './large.css';
+import './button.css';
 
-const large = {
-  render: async (text) => {
+const button = {
+  render: async (type, text) => {
     const view = `
-        <Button class="button-large">
+        <Button class="${type}">
             ${text || ''}
         </Button>
     `;
@@ -14,4 +14,4 @@ const large = {
   afterRender: async () => {},
 };
 
-export default large;
+export default button;
