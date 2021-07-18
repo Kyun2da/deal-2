@@ -11,12 +11,12 @@ const alert = {
                 ${alertMessage}
             </div>
             <div class="alert-buttons">
-                <p class="cancel-button">
+                <Button class="cancel-button">
                     ${cancelMessage}
-                </p>
-                <p class="confirm-button">
+                </Button>
+                <Button class="confirm-button">
                     ${confirmMessage}
-                </p>
+                </Button>
             </div>
         </div>
     `;
