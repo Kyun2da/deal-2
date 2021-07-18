@@ -7,6 +7,7 @@ import category from './views/pages/category/category';
 import slideAnimation from './services/slideAnimation';
 import replaceBothSideNodes from './services/replaceBothSideNodes';
 import menu from './views/pages/menu';
+import write from './views/pages/write';
 
 // List of supported routes. Any url other than these routes will throw a 404 error
 const routes = {
@@ -14,6 +15,7 @@ const routes = {
   '/login': login,
   '/category': category,
   '/menu': menu,
+  '/write': write,
   // '/p/:id': PostShow,
   // '/register': Register,
 };

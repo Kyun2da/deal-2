@@ -42,6 +42,10 @@ const main = {
   },
   afterRender: async () => {
     await mainHeader.afterRender();
+    const $fabBtn = document.querySelector('.FAB-btn');
+    $fabBtn.addEventListener('click', () => {
+      window.location.href = '#/write';
+    });
   },
 };
 
