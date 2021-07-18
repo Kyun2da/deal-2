@@ -1,0 +1,15 @@
+.medium-input {
+  width: 280px;
+  height: 40px;
+  border-radius: 8px;
+  padding: 10px;
+  border: 1px solid var(--grey3);
+  color: var(--title-active);
+  font-size: 16px;
+}
+
+.medium-input:active,
+.medium-input:focus {
+  border: 1px solid var(--primary);
+  outline: none;
+}
