@@ -1,0 +1,10 @@
+.chat-bar {
+  width: 350px;
+  height: 56px;
+  background-color: var(--off-white);
+  box-shadow: inset 0px 1px 0px var(--grey3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+}
