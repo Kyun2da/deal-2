@@ -1,0 +1,16 @@
+.menu {
+  overflow: hidden;
+}
+
+.menu .menu-header {
+  border-bottom: none;
+}
+
+.menu .slide {
+  min-width: 435px;
+  display: flex;
+}
+
+.menu .page {
+  min-width: 435px;
+}
