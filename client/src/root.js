@@ -6,12 +6,14 @@ import './views/styles/pages/common.css';
 import category from './views/pages/category/category';
 import slideAnimation from './services/slideAnimation';
 import replaceBothSideNodes from './services/replaceBothSideNodes';
+import menu from './views/pages/menu';
 
 // List of supported routes. Any url other than these routes will throw a 404 error
 const routes = {
   '/': main,
   '/login': login,
   '/category': category,
+  '/menu': menu,
   // '/p/:id': PostShow,
   // '/register': Register,
 };

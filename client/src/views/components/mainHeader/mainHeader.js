@@ -35,7 +35,9 @@ const mainHeader = {
                   </div>
                   <div class="right-icons">
                     ${userIcon}
-                    ${menuIcon}
+                    <a href="#/menu">
+                      ${menuIcon}
+                    </a>
                   </div>
                 </header>
             `;
