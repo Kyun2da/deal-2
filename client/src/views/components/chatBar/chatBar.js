@@ -26,6 +26,10 @@ const chatBar = {
   },
 
   afterRender: async () => {
+    const $chatBar = document.querySelector('.chat-bar');
+    $chatBar.addEventListener('keyup', (e) =>
+      changeSendIcon('.chat-bar', iconData, e)
+    );
   },
 };
 
