@@ -1,0 +1,15 @@
+.large-input {
+  width: 320px;
+  height: 44px;
+  border-radius: 8px;
+  padding: 10px;
+  border: 1px solid var(--grey3);
+  color: var(--title-active);
+  font-size: 16px;
+}
+
+.large-input:active,
+.large-input:focus {
+  border: 1px solid var(--primary);
+  outline: none;
+}
