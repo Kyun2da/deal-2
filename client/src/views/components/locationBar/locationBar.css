@@ -1,0 +1,16 @@
+.location-bar {
+  width: 100%;
+  display: flex;
+  position: fixed;
+  align-items: center;
+  bottom: 0;
+  padding: 12px 16px;
+  border-top: 1px solid var(--grey3);
+  background-color: var(--white);
+  z-index: 20;
+}
+
+.location-bar .map-pin {
+  margin-right: 4px;
+  width: 20px;
+}
