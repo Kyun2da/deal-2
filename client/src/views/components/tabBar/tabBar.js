@@ -1,4 +1,3 @@
-import changeActiveComponent from '../../../services/changeActiveComponent';
 import { tab } from '../button';
 import './tabBar.css';
 
@@ -15,12 +14,7 @@ const tabBar = {
 
     return view;
   },
-  after_render: async () => {
-    const $tabBar = document.querySelector('.tab-bar');
-    $tabBar.addEventListener('click', (e) =>
-      changeActiveComponent('.tab-bar', e)
-    );
-  },
+  afterRender: async () => {},
 };
 
 export default tabBar;
