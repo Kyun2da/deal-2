@@ -1,4 +1,3 @@
-import medium from './medium';
-import large from './large';
+import textInput from './textInput';
 
-export { medium, large };
+export default textInput;
