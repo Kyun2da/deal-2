@@ -1,5 +1,5 @@
 import './chatBar.css';
-import { medium } from '../textInput';
+import textInput from '../textInput';
 import icon from '../icon';
 import changeSendIcon from '../../../services/changeSendIcon';
 
@@ -12,7 +12,7 @@ const iconData = {
 
 const chatBar = {
   render: async () => {
-    const mediumInput = await medium.render();
+    const mediumInput = await textInput.render('medium-input');
     const { defaultSrc, alt, className } = iconData;
     const sendIcon = await icon.render(defaultSrc, alt, className);
     const view = `
