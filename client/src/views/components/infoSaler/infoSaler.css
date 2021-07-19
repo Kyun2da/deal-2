@@ -1,0 +1,20 @@
+.info-saler {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 310px;
+  height: 54px;
+  padding: 16px;
+  background-color: var(--off-white);
+}
+
+.info-saler .title,
+.username-location .username {
+  font-size: 16px;
+}
+
+.username-location .location {
+  font-size: 14px;
+  color: var(--grey3);
+  margin-left: 8px;
+}
