@@ -24,7 +24,7 @@ const login = {
     const loginButton = await button.render('button-large', '로그인');
     const view = `<div class="page login">
                     ${menuHeaderItem}
-                    <form method="post" action="http://localhost:3000/api/login"  class="login-area" >
+                    <form class="login-area">
                       ${idInput}
                       ${loginButton}
                       <a href="#/signup" class="signup-button">
