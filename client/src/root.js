@@ -5,7 +5,6 @@ import login from './views/pages/login';
 import './views/styles/pages/common.css';
 import category from './views/pages/category/category';
 import slideAnimation from './services/slideAnimation';
-import replaceBothSideNodes from './services/replaceBothSideNodes';
 import menu from './views/pages/menu';
 import write from './views/pages/write';
 
@@ -19,6 +18,10 @@ const routes = {
   // '/p/:id': PostShow,
   // '/register': Register,
 };
+
+const mainpage = ['/'];
+const leftPages = ['/category'];
+const rightPages = ['/login', '/menu'];
 
 // The router code. Takes a URL, checks against the list of supported routes and then renders the corresponding content page.
 const router = async (e) => {
@@ -37,36 +40,69 @@ const router = async (e) => {
   // Get the page from our hash of supported routes.
   // If the parsed URL is not in our list of supported routes, select the 404 page instead
   const page = routes[parsedURL] ? routes[parsedURL] : error404;
-
+  const pageWidth = 435;
+  const emptyPrevElement = `<div class="empty prev"></div>`;
+  const emptyNextElement = `<div class="empty next"></div>`;
+  const currentPageUrl = window.location.hash.slice(1).toLowerCase() || '/';
   if (e.type === 'hashchange') {
     const backPageUrl = e.oldURL.split('#')[1] || '/';
-    const currentPageUrl = window.location.hash.slice(1).toLowerCase() || '/';
-    if (backPageUrl === '/') {
+    // leftPages에 있는 url로 들어갈 시
+    if (leftPages.includes(currentPageUrl)) {
       const newContent = await page.render();
-      content.removeChild(content.childNodes[0]);
+      content.removeChild(content.firstChild);
       content.insertAdjacentHTML('afterbegin', newContent);
-
-      slideAnimation(content, 0);
-
       setTimeout(() => {
-        replaceBothSideNodes(content);
-      }, 500);
-    } else if (currentPageUrl === '/') {
+        slideAnimation(content.firstChild, pageWidth);
+      }, 100);
+      // rightPages에 있는 url로 들어갈 시
+    } else if (rightPages.includes(currentPageUrl)) {
       const newContent = await page.render();
-      content.removeChild(content.childNodes[content.childNodes.length - 1]);
+      content.removeChild(content.lastChild);
       content.insertAdjacentHTML('beforeend', newContent);
 
-      slideAnimation(content, -870);
-
       setTimeout(() => {
-        replaceBothSideNodes(content);
-      }, 500);
+        slideAnimation(content.lastChild, -pageWidth);
+      }, 100);
+      // 메인으로 돌아갈 시
+    } else if (mainpage.includes(currentPageUrl)) {
+      if (leftPages.includes(backPageUrl)) {
+        content.firstChild.addEventListener('transitionend', () => {
+          content.removeChild(content.firstChild);
+          content.insertAdjacentHTML('afterbegin', emptyPrevElement);
+        });
+        slideAnimation(content.firstChild, -pageWidth);
+      } else if (rightPages.includes(backPageUrl)) {
+        content.lastChild.addEventListener('transitionend', () => {
+          content.removeChild(content.lastChild);
+          content.insertAdjacentHTML('beforeend', emptyNextElement);
+        });
+        slideAnimation(content.lastChild, pageWidth);
+      } else {
+        content.innerHTML = emptyPrevElement;
+        content.innerHTML += await page.render();
+        content.innerHTML += emptyNextElement;
+      }
+    } else {
+      content.innerHTML = emptyPrevElement;
+      content.innerHTML += await page.render();
+      content.innerHTML += emptyNextElement;
     }
   } else {
     // 돔 로드일 때는 그냥 페이지 바로 렌더링
-    content.innerHTML += `<div class="empty prev"></div>`;
-    content.innerHTML += await page.render();
-    content.innerHTML += `<div class="empty next"></div>`;
+    if (leftPages.includes(currentPageUrl)) {
+      content.innerHTML += await page.render();
+      slideAnimation(content.firstChild, pageWidth);
+    } else content.innerHTML += emptyPrevElement;
+    if (
+      !leftPages.includes(currentPageUrl) &&
+      !rightPages.includes(currentPageUrl)
+    )
+      content.innerHTML += await page.render();
+    else content.innerHTML += await routes[mainpage[0]].render();
+    if (rightPages.includes(currentPageUrl)) {
+      content.innerHTML += await page.render();
+      slideAnimation(content.lastChild, -pageWidth);
+    } else content.innerHTML += emptyNextElement;
   }
   // https://hi-dot.tistory.com/8
 
