@@ -1,5 +1,6 @@
 import icon from '../icon';
 import './mainHeader.css';
+import dropdown from '../modal/dropdown';
 
 const mainHeader = {
   render: async (isLogined = false) => {
@@ -23,6 +24,7 @@ const mainHeader = {
       '메뉴',
       'menu-icon'
     );
+    const mapDropDown = await dropdown.render(['역삼동']);
 
     const view = `
                 <header class="main-header">
@@ -32,6 +34,7 @@ const mainHeader = {
                   <div class="map-container">
                     ${mapPinIcon}
                     <span class="town-name">역삼동</span>
+                    ${mapDropDown}
                   </div>
                   <div class="right-icons">
                     <a href="#${isLogined ? '/myinfo' : '/login'}">
@@ -45,7 +48,9 @@ const mainHeader = {
             `;
     return view;
   },
-  afterRender: async () => {},
+  afterRender: async () => {
+    await dropdown.afterRender();
+  },
 };
 
 export default mainHeader;

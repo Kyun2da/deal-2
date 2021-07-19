@@ -1,10 +1,14 @@
 .main-dropdown {
+  display: none;
+  position: absolute;
+  top: 40px;
+  left: -50px;
   width: 180px;
   background-color: var(--off-white);
   border-radius: 10px;
-  display: flex;
   flex-direction: column;
   overflow: hidden;
   box-shadow: 0px 0px 4px rgba(204, 204, 204, 0.5),
     0px 2px 4px rgba(0, 0, 0, 0.25);
+  z-index: 1;
 }
