@@ -1,0 +1,15 @@
+.product-bar {
+  width: 340px;
+  height: 76px;
+  background-color: var(--white);
+  box-shadow: inset 0px 1px 0px var(--grey3);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.product-bar .price {
+  border-left: 1px solid var(--grey3);
+  padding-left: 16px;
+  line-height: 40px;
+}
