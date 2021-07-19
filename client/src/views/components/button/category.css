@@ -10,7 +10,7 @@
   border-radius: 999px;
 }
 
-.button-category:active {
+.button-category.active {
   background-color: var(--primary);
   color: var(--white);
 }
