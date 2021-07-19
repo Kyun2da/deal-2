@@ -1,10 +1,8 @@
 const express = require('express');
+const { postSignup } = require('../controller/signup');
 
 const router = express.Router();
 
-/* GET home page. */
-router.post('/', (req, res) => {
-  res.send('회원가입 라우터 입니다.');
-});
+router.post('/', postSignup);
 
 module.exports = router;
