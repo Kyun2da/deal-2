@@ -9,10 +9,11 @@ const addImgButton = {
       'img-icon'
     );
     const view = `
-        <div class="add-img-btn">
+        <label class="add-img-btn">
+            <input type="file" multiple class="input-file" />
             ${imgIcon}
             <div>${count}/10</div>
-        </div>
+        </label>
     `;
 
     return view;
