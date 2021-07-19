@@ -39,7 +39,7 @@ const chatDetail = {
       '실제로 신어볼 수 있는건가요??',
       false
     );
-    const message5 = await chatBubble.render('넵 가능합니다', false);
+    const message5 = await chatBubble.render('넵 가능합니다', true);
     const message6 = await chatBubble.render(
       '아 그럼 어디서 만나실까요?',
       false
