@@ -2,6 +2,7 @@ import mainHeader from '../../components/mainHeader';
 import productListItem from '../../components/productListItem';
 import './main.css';
 import { FAB } from '../../components/button';
+import changeDropdownDisplay from '../../../services/changeDropdownDisplay';
 
 const main = {
   render: async () => {
@@ -46,6 +47,8 @@ const main = {
     $fabBtn.addEventListener('click', () => {
       window.location.href = '#/write';
     });
+    const $mainPage = document.querySelector('.main-page');
+    $mainPage.addEventListener('click', changeDropdownDisplay);
   },
 };
 

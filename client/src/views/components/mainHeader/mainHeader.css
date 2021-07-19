@@ -25,6 +25,7 @@
   font-size: 20px;
   color: white;
   cursor: pointer;
+  position: relative;
 }
 
 .main-header .user-icon {
