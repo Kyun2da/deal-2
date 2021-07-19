@@ -2,7 +2,7 @@ import icon from '../../components/icon';
 import menuHeader from '../../components/menuHeader';
 import textInput from '../../components/textInput';
 import { button } from '../../components/button';
-import './login.css';
+import './signup.css';
 
 const login = {
   render: async () => {
@@ -14,22 +14,30 @@ const login = {
       '#/',
       backIcon,
       null,
-      '로그인',
+      '회원가입',
       'off-white'
     );
     const idInput = await textInput.render(
       'large-input',
       '아이디를 입력하세요'
     );
-    const loginButton = await button.render('button-large', '로그인');
-    const view = `<div class="page login">
+    const townInput = await textInput.render(
+      'large-input',
+      '시·구 제외, 동만 입력'
+    );
+    const signupButton = await button.render('button-large', '회원가입');
+    const view = `<div class="page signup">
                     ${menuHeaderItem}
-                    <form class="login-area">
+                    <form class="signup-area">
+                      <p class='label'>
+                        아이디
+                      </p>
                       ${idInput}
-                      ${loginButton}
-                      <a href="#/signup" class="signup-button">
-                        회원가입
-                      </a>
+                      <p class='label'>
+                        우리 동네
+                      </p>
+                      ${townInput}
+                      ${signupButton}
                     </form>
                   </div>`;
 

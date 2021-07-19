@@ -1,0 +1,10 @@
+.myinfo-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 36px 15px;
+}
+
+.myinfo-area > * {
+  margin-bottom: 36px;
+}

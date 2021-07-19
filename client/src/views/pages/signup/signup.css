@@ -1,0 +1,15 @@
+.signup-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 36px 60px;
+}
+
+.signup-area > input {
+  margin-bottom: 30px;
+}
+
+.signup-area > .label {
+  margin-right: auto;
+  margin-bottom: 10px;
+}

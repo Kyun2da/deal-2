@@ -8,7 +8,10 @@ import slideAnimation from './services/slideAnimation';
 import menu from './views/pages/menu';
 import write from './views/pages/write';
 import chatListPage from './views/pages/chatList';
+import signup from './views/pages/signup';
+import myinfo from './views/pages/myinfo';
 import chatDetail from './views/pages/chatDetail';
+
 
 // List of supported routes. Any url other than these routes will throw a 404 error
 const routes = {
@@ -18,6 +21,8 @@ const routes = {
   '/menu': menu,
   '/write': write,
   '/chatlist': chatListPage,
+  '/signup': signup,
+  '/myinfo': myinfo,
   '/chatdetail': chatDetail,
   // '/p/:id': PostShow,
   // '/register': Register,

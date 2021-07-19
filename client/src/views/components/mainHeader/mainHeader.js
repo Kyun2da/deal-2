@@ -2,7 +2,7 @@ import icon from '../icon';
 import './mainHeader.css';
 
 const mainHeader = {
-  render: async () => {
+  render: async (isLogined = false) => {
     const categoryIcon = await icon.render(
       'src/images/category.svg',
       '카테고리',
@@ -34,7 +34,9 @@ const mainHeader = {
                     <span class="town-name">역삼동</span>
                   </div>
                   <div class="right-icons">
-                    ${userIcon}
+                    <a href="#${isLogined ? '/myinfo' : '/login'}">
+                      ${userIcon}
+                    </a>
                     <a href="#/menu">
                       ${menuIcon}
                     </a>
