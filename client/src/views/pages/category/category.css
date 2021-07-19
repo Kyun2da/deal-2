@@ -4,3 +4,8 @@
   justify-items: center;
   grid-template-columns: 1fr 1fr 1fr;
 }
+
+.category-page {
+  z-index: 2;
+  background-color: var(--white);
+}
