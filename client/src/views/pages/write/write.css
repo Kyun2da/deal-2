@@ -5,10 +5,12 @@
 .write-page .form-container {
   height: calc(90vh - 105px);
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .write-page .img-container {
   display: flex;
+  overflow: hidden;
   flex-shrink: 0;
   padding: 20px;
 }

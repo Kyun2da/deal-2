@@ -5,6 +5,9 @@ import './write.css';
 import { category } from '../../components/button';
 import fitScroll from '../../../services/fitScroll';
 import locationBar from '../../components/locationBar';
+import handleImgFiles from '../../../services/handleImgFiles';
+import horizontalScroll from '../../../services/horizontalScroll';
+import toggleCategory from '../../../services/toggleCategory';
 
 const write = {
   render: async () => {
@@ -81,6 +84,14 @@ const write = {
     Array.from(textareaItems).forEach((item) => {
       item.addEventListener('input', fitScroll);
     });
+
+    const addImgInput = document.querySelector('.write-page .input-file');
+    addImgInput.addEventListener('change', handleImgFiles, false);
+
+    horizontalScroll('.write-page .img-container');
+    horizontalScroll('.write-page .category-container');
+
+    toggleCategory(document.querySelector('.write-page .category-container'));
   },
 };
 
