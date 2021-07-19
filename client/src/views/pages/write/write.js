@@ -8,6 +8,7 @@ import locationBar from '../../components/locationBar';
 import handleImgFiles from '../../../services/handleImgFiles';
 import horizontalScroll from '../../../services/horizontalScroll';
 import toggleCategory from '../../../services/toggleCategory';
+import essentialInfoCheck from '../../../services/essentialInfoCheck';
 
 const write = {
   render: async () => {
@@ -20,7 +21,7 @@ const write = {
     const backIcon = await icon.render(
       'src/images/check.svg',
       '완료',
-      'complete'
+      'disable'
     );
     const writeHeader = await menuHeader.render(
       '#/',
@@ -58,21 +59,21 @@ const write = {
 
     const view = `<div class="page write-page">
                     ${writeHeader}
-                    <div class="form-container">
+                    <div class="form-container" id="form-container">
                       <div class="img-container">
                         ${imgButtonItem}
                       </div>
                       <hr/>
-                      <textarea class="textarea" name="title" placeholder="글 제목"></textarea>
+                      <textarea class="textarea title" name="title" placeholder="글 제목"></textarea>
                       <hr/>
                       <div class="category-label">(필수)카테고리를 선택해주세요.</div>
                       <div class="category-container">
                         ${categoryItems}
                       </div>
                       <hr/>
-                      <textarea class="textarea" name="price" placeholder="₩가격(선택사항)"></textarea>
+                      <textarea class="textarea price" name="price" placeholder="₩가격(선택사항)"></textarea>
                       <hr/>
-                      <textarea class="textarea" name="content" placeholder="게시글 내용을 작성해주세요."></textarea>
+                      <textarea class="textarea content" name="content" placeholder="게시글 내용을 작성해주세요."></textarea>
                     </div>
                     ${locationBarItem}
                   </div>`;
@@ -92,6 +93,8 @@ const write = {
     horizontalScroll('.write-page .category-container');
 
     toggleCategory(document.querySelector('.write-page .category-container'));
+
+    essentialInfoCheck();
   },
 };
 
