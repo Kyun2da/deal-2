@@ -3,6 +3,7 @@ import menuHeader from '../../components/menuHeader';
 import textInput from '../../components/textInput';
 import { button } from '../../components/button';
 import './signup.css';
+import checkSignup from '../../../services/checkSignup';
 
 const login = {
   render: async () => {
@@ -19,13 +20,15 @@ const login = {
     );
     const idInput = await textInput.render(
       'large-input',
-      '아이디를 입력하세요'
+      '아이디를 입력하세요',
+      'id'
     );
     const townInput = await textInput.render(
       'large-input',
-      '시·구 제외, 동만 입력'
+      '시·구 제외, 동만 입력',
+      'town'
     );
-    const signupButton = await button.render('button-large', '회원가입');
+    const signupButton = await button.render('button-large', '회원가입', true);
     const view = `<div class="page signup">
                     ${menuHeaderItem}
                     <form class="signup-area">
@@ -43,7 +46,10 @@ const login = {
 
     return view;
   },
-  afterRender: async () => {},
+  afterRender: async () => {
+    const $signupArea = document.querySelector('.signup-area');
+    $signupArea.addEventListener('input', () => checkSignup($signupArea));
+  },
 };
 
 export default login;
