@@ -1,5 +1,7 @@
 .menu {
   overflow: hidden;
+  z-index: 2;
+  background-color: var(--white);
 }
 
 .menu .menu-header {
