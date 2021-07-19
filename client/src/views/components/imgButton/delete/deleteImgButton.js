@@ -19,7 +19,12 @@ const deleteImgButton = {
 
     return view;
   },
-  afterRender: async () => {},
+  afterRender: async (target) => {
+    const closeBtn = target.querySelector('.delete-icon');
+    closeBtn.addEventListener('click', () => {
+      target.remove();
+    });
+  },
 };
 
 export default deleteImgButton;
