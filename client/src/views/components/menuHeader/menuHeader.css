@@ -26,8 +26,15 @@
 }
 
 .menu-header.invisible {
-  background-color: var(--white);
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: transparent;
+}
+
+.menu-header.invisible .back-icon {
+  background-color: transparent;
+}
+
+.menu-header.invisible .title {
+  color: var(--white);
 }
 
 .menu-header .front-icon,

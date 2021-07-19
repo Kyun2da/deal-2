@@ -11,7 +11,7 @@ import chatListPage from './views/pages/chatList';
 import signup from './views/pages/signup';
 import myinfo from './views/pages/myinfo';
 import chatDetail from './views/pages/chatDetail';
-
+import productDetail from './views/pages/productDetail/productDetail';
 
 // List of supported routes. Any url other than these routes will throw a 404 error
 const routes = {
@@ -24,6 +24,7 @@ const routes = {
   '/signup': signup,
   '/myinfo': myinfo,
   '/chatdetail': chatDetail,
+  '/productdetail': productDetail,
   // '/p/:id': PostShow,
   // '/register': Register,
 };
