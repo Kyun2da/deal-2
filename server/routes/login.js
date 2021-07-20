@@ -1,11 +1,8 @@
 const express = require('express');
 
 const router = express.Router();
+const { postLogin } = require('../controllers/login');
 
-/* GET home page. */
-router.use('/', (req, res) => {
-  console.log(req);
-  res.render('index', { title: 'Express' });
-});
+router.post('/', postLogin);
 
 module.exports = router;
