@@ -23,6 +23,7 @@ const deleteImgButton = {
     const closeBtn = target.querySelector('.delete-icon');
     closeBtn.addEventListener('click', () => {
       target.remove();
+      // TODO : s3에서 삭제
     });
   },
 };
