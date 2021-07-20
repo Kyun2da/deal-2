@@ -21,7 +21,6 @@ const myinfo = {
                     ${menuHeaderItem}
                     <div class="myinfo-area">
                       <p class="label">
-                        Username
                       </p>
                       ${logoutButton}                
                     </div>
@@ -30,7 +29,14 @@ const myinfo = {
     return view;
   },
   afterRender: async () => {
-    // id 받아와서 label에 넣기
+    const idLabel = document.querySelector('.label');
+    idLabel.innerText = localStorage.getItem('id');
+
+    const logoutButton = document.querySelector('.button-large');
+    logoutButton.addEventListener('click', () => {
+      localStorage.removeItem('id');
+      window.location.href = '#/';
+    });
   },
 };
 
