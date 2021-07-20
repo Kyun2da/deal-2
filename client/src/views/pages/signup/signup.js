@@ -26,7 +26,7 @@ const login = {
     const townInput = await textInput.render(
       'large-input',
       '시·구 제외, 동만 입력',
-      'town'
+      'town1'
     );
     const signupButton = await button.render('button-large', '회원가입', true);
     const view = `<div class="page signup">
