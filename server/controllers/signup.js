@@ -13,7 +13,7 @@ const postSignup = async (req, res) => {
     }
   } catch (err) {
     console.log('DB Error');
-    res.status(500).send('signup error');
+    res.status(500).send('server error');
   }
 };
 

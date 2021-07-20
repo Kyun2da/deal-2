@@ -3,7 +3,9 @@ import './mainHeader.css';
 import dropdown from '../modal/dropdown';
 
 const mainHeader = {
-  render: async (isLogined = false) => {
+  render: async () => {
+    let isLogined = false;
+    if (localStorage.getItem('id')) isLogined = !isLogined;
     const categoryIcon = await icon.render(
       'src/images/category.svg',
       '카테고리',

@@ -31,7 +31,7 @@ const login = {
     const signupButton = await button.render('button-large', '회원가입', true);
     const view = `<div class="page signup">
                     ${menuHeaderItem}
-                    <form class="signup-area" method="post" action="http://localhost:3000/api/signup">
+                    <form class="signup-area">
                       <p class='label'>
                         아이디
                       </p>

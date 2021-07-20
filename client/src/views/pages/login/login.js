@@ -3,6 +3,7 @@ import menuHeader from '../../components/menuHeader';
 import textInput from '../../components/textInput';
 import { button } from '../../components/button';
 import './login.css';
+import api from '../../../apis';
 
 const login = {
   render: async () => {
@@ -19,7 +20,8 @@ const login = {
     );
     const idInput = await textInput.render(
       'large-input',
-      '아이디를 입력하세요'
+      '아이디를 입력하세요',
+      'id'
     );
     const loginButton = await button.render('button-large', '로그인');
     const view = `<div class="page login">
@@ -35,7 +37,20 @@ const login = {
 
     return view;
   },
-  afterRender: async () => {},
+  afterRender: async () => {
+    const loginBtn = document.querySelector('.button-large');
+    const input = document.getElementsByTagName('input')[0];
+    loginBtn.addEventListener('click', async (e) => {
+      e.preventDefault();
+      const data = await api.post('/login', { id: input.value });
+      if (data.id) {
+        localStorage.setItem('id', data.id);
+        window.location.href = '/';
+      } else {
+        window.location.href = '#/login';
+      }
+    });
+  },
 };
 
 export default login;
