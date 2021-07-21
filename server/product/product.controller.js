@@ -1,7 +1,14 @@
 const express = require('express');
-const insertProduct = require('./product.service');
+const { selectProduct, insertProduct } = require('./product.service');
 
 const router = express.Router();
+
+router.get('/', async (req, res) => {
+  const { success, result } = await selectProduct(req.body);
+  if (success) {
+    res.status(200).send({ result });
+  } else res.status(500).send('server error');
+});
 
 router.post('/', async (req, res) => {
   const { success } = await insertProduct(req.body);

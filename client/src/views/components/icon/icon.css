@@ -2,3 +2,7 @@
   width: 32px;
   cursor: pointer;
 }
+
+.nonclick-icon {
+  cursor: initial;
+}

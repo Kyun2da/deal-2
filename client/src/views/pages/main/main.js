@@ -1,41 +1,20 @@
 import mainHeader from '../../components/mainHeader';
-import productListItem from '../../components/productListItem';
 import './main.css';
 import { FAB } from '../../components/button';
 import changeDropdownDisplay from '../../../services/main/changeDropdownDisplay';
+import getProduct from '../../../services/main/getProduct';
 
 const main = {
   render: async () => {
     const header = await mainHeader.render();
     const FABBtn = await FAB.render();
-    const categoryItem = await productListItem.render(
-      0,
-      'src/mockup/image.png',
-      '파랑 선풍기',
-      '역삼동',
-      '2시간 전',
-      '24,500원',
-      1,
-      1,
-      2
-    );
-
+    const id = localStorage.getItem('id');
     const view = `<div class="page main-page">
                     ${header}
                     <section class="product-list">
-                      ${categoryItem}
-                      ${categoryItem}
-                      ${categoryItem}
-                      ${categoryItem}
-                      ${categoryItem}
-                      ${categoryItem}
-                      ${categoryItem}
-                      ${categoryItem}
-                      ${categoryItem}
-                      ${categoryItem}
                     </section>
                     <div class="FAB-container">
-                      ${FABBtn}
+                      ${id ? FABBtn : ''}
                     </div>
                   </div>`;
 
@@ -44,11 +23,16 @@ const main = {
   afterRender: async () => {
     await mainHeader.afterRender();
     const $fabBtn = document.querySelector('.FAB-btn');
-    $fabBtn.addEventListener('click', () => {
-      window.location.href = '#/write';
-    });
+    if ($fabBtn) {
+      $fabBtn.addEventListener('click', () => {
+        window.location.href = '#/write';
+      });
+    }
+
     const $mainPage = document.querySelector('.main-page');
     $mainPage.addEventListener('click', changeDropdownDisplay);
+    const $productContainer = document.querySelector('.product-list');
+    getProduct($productContainer);
   },
 };
 
