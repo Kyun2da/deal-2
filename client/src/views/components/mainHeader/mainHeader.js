@@ -26,7 +26,7 @@ const mainHeader = {
       '메뉴',
       'menu-icon'
     );
-    const mapDropDown = await dropdown.render(['역삼동']);
+    const mapDropDown = await dropdown.render([]);
 
     const view = `
                 <header class="main-header">
@@ -35,7 +35,7 @@ const mainHeader = {
                   </a>
                   <div class="map-container">
                     ${mapPinIcon}
-                    <span class="town-name">역삼동</span>
+                    <span class="town-name">전체</span>
                     ${mapDropDown}
                   </div>
                   <div class="right-icons">
