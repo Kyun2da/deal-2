@@ -9,7 +9,7 @@ aws.config.update({
   region: 'ap-northeast-2',
 });
 
-const upload = multer({
+const uploadImagetoS3 = multer({
   storage: multerS3({
     s3: new aws.S3(),
     bucket: process.env.S3_BUCKET,
@@ -17,6 +17,6 @@ const upload = multer({
       cb(null, `images/${Date.now()}${path.basename(file.originalname)}`);
     },
   }),
-});
+}).array('images', 10);
 
-module.exports = { upload };
+module.exports = { uploadImagetoS3 };

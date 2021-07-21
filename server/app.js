@@ -1,5 +1,4 @@
 const express = require('express');
-const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const dotenv = require('dotenv');
@@ -8,10 +7,10 @@ const cors = require('cors');
 
 dotenv.config();
 
-const signupRouter = require('./routes/signup');
-const loginRouter = require('./routes/login');
-const uploadRouter = require('./routes/upload');
-const productRouter = require('./routes/product');
+const signupRouter = require('./signup/signup.controller');
+const loginRouter = require('./login/login.controller');
+const imageRouter = require('./image/image.controller');
+const productRouter = require('./product/product.controller');
 
 const app = express();
 
@@ -20,7 +19,6 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
 app.use(
   session({
     secret: 'deal-2',
@@ -31,7 +29,7 @@ app.use(
 
 app.use('/api/signup', signupRouter);
 app.use('/api/login', loginRouter);
-app.use('/api/upload', uploadRouter);
+app.use('/api/upload', imageRouter);
 app.use('/api/product', productRouter);
 
 module.exports = app;
