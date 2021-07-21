@@ -2,7 +2,7 @@ import mainHeader from '../../components/mainHeader';
 import productListItem from '../../components/productListItem';
 import './main.css';
 import { FAB } from '../../components/button';
-import changeDropdownDisplay from '../../../services/changeDropdownDisplay';
+import changeDropdownDisplay from '../../../services/main/changeDropdownDisplay';
 
 const main = {
   render: async () => {

@@ -1,5 +1,5 @@
-import icon from '../views/components/icon';
-import api from '../apis';
+import icon from '../../views/components/icon';
+import api from '../../apis';
 
 const categoryFilled = (element) => {
   const categoryItems = element.children;
