@@ -1,4 +1,5 @@
 import icon from '../views/components/icon';
+import api from '../apis';
 
 const categoryFilled = (element) => {
   const categoryItems = element.children;
@@ -33,9 +34,31 @@ const isActiveCheckBtn = async () => {
         'complete'
       );
       const completeBtn = completeBtnTemplate.content.firstElementChild;
-      completeBtn.addEventListener('click', () => {
-        window.location.href = '#/';
-        // TODO: 서버에 데이터 삽입 포스트 로직 추가
+      const categoryValue =
+        categoryContainer.querySelector('.active').innerText;
+      const priceContainer = document.querySelector('.textarea.price');
+      const imgContainer = document.querySelector('.img-container');
+      const uploadedImages = imgContainer.querySelectorAll('.uploaded-img');
+      const imgUrlArr = Array.from(uploadedImages).map(
+        (image) => image.querySelector('.img-box.medium').src
+      );
+      const locationBar = document.querySelector('.location-bar');
+      const townValue = locationBar.querySelector('.town-value').innerText;
+
+      completeBtn.addEventListener('click', async () => {
+        const productData = {
+          sellerId: localStorage.getItem('id'),
+          images: imgUrlArr,
+          town: townValue,
+          title: titleTextArea.value,
+          category: categoryValue,
+          price: priceContainer.value,
+          content: contentTextArea.value,
+        };
+        const result = await api.post('/product', productData);
+        if (result.msg) {
+          window.location.href = '#/';
+        }
       });
       disableBtn.parentNode.replaceChild(completeBtn, disableBtn);
     }
