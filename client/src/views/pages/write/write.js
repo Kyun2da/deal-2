@@ -3,12 +3,12 @@ import addImgButton from '../../components/imgButton/add/addImgButton';
 import menuHeader from '../../components/menuHeader';
 import './write.css';
 import { category } from '../../components/button';
-import fitScroll from '../../../services/write/fitScroll';
+import fitScroll from '../../../services/fitScroll';
 import locationBar from '../../components/locationBar';
-import handleImgFiles from '../../../services/write/handleImgFiles';
-import horizontalScroll from '../../../services/write/horizontalScroll';
-import toggleCategory from '../../../services/write/toggleCategory';
-import essentialInfoCheck from '../../../services/write/essentialInfoCheck';
+import handleImgFiles from '../../../services/handleImgFiles';
+import horizontalScroll from '../../../services/horizontalScroll';
+import toggleCategory from '../../../services/toggleCategory';
+import essentialInfoCheck from '../../../services/essentialInfoCheck';
 
 const write = {
   render: async () => {

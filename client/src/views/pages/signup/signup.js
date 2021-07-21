@@ -3,7 +3,7 @@ import menuHeader from '../../components/menuHeader';
 import textInput from '../../components/textInput';
 import { button } from '../../components/button';
 import './signup.css';
-import checkSignup from '../../../services/signup/checkSignup';
+import checkSignup from '../../../services/checkSignup';
 
 const login = {
   render: async () => {

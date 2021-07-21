@@ -1,10 +1,10 @@
 import main from './views/pages/main';
 import error404 from './views/pages/error404';
-import utils from './services/common/utils';
+import utils from './services/utils';
 import login from './views/pages/login';
 import './views/styles/pages/common.css';
 import category from './views/pages/category/category';
-import slideAnimation from './services/common/slideAnimation';
+import slideAnimation from './services/slideAnimation';
 import menu from './views/pages/menu';
 import write from './views/pages/write';
 import chatListPage from './views/pages/chatList';
