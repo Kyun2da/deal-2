@@ -1,7 +1,17 @@
 const BASE_URL = 'http://localhost:3000/api';
 
 const api = {
-  get: (url) => {},
+  get: (url) => {
+    return fetch(`${BASE_URL}${url}`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((res) => res.json())
+      .then((json) => Promise.resolve(json))
+      .catch((err) => Promise.reject(err));
+  },
 
   post: (url, data) => {
     return fetch(`${BASE_URL}${url}`, {
