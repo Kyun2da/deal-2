@@ -33,9 +33,7 @@ const category = {
     ];
 
     let categoryItems = '';
-    // eslint-disable-next-line no-restricted-syntax
     for (const item of categoryData) {
-      // eslint-disable-next-line no-await-in-loop
       categoryItems += await categoryListItem.render(item);
     }
     const view = `<div class="page category-page">

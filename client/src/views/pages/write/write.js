@@ -49,9 +49,7 @@ const write = {
     ];
 
     let categoryItems = '';
-    // eslint-disable-next-line no-restricted-syntax
     for (const item of categoryTitles) {
-      // eslint-disable-next-line no-await-in-loop
       categoryItems += await category.render(item);
     }
 

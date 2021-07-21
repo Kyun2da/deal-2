@@ -14,5 +14,7 @@ module.exports = {
   rules: {
     'prettier/prettier': ['error', { singleQuote: true }],
     'import/no-unresolved': 'off',
+    'no-await-in-loop': 'off',
+    'no-restricted-syntax': 'off',
   },
 };
