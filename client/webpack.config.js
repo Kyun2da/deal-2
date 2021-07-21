@@ -22,25 +22,6 @@ module.exports = {
         test: /\.css$/,
         use: [MiniCssExtractPlugin.loader, 'css-loader'],
       },
-      {
-        test: /\.png$/,
-        loader: 'file-loader',
-        options: {
-          publicPath: './dist/',
-          name: '[name].[ext]?[hash]',
-        },
-      },
-      {
-        test: /\.png$/,
-        use: {
-          loader: 'url-loader',
-          options: {
-            publicPath: './dist/',
-            name: '[name].[ext]?[hash]',
-            limit: 2000,
-          },
-        },
-      },
     ],
   },
   plugins: [
