@@ -12,5 +12,7 @@ module.exports = {
   ignorePatterns: ['node_modules/'],
   rules: {
     'prettier/prettier': ['error', { singleQuote: true }],
+    'no-await-in-loop': 'off',
+    'no-restricted-syntax': 'off',
   },
 };

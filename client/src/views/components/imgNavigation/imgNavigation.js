@@ -5,9 +5,7 @@ import './imgNavigation.css';
 const imgNavigation = {
   render: async (count, selected = 0) => {
     let imgNavItems = '';
-    // eslint-disable-next-line no-restricted-syntax
     for (const i of Array.from(Array(count).keys())) {
-      // eslint-disable-next-line no-await-in-loop
       imgNavItems += await imgNav.render(i === selected, i);
     }
 

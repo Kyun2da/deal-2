@@ -4,11 +4,9 @@ import productListItem from '../../productListItem/productListItem';
 const likeList = {
   render: async () => {
     let likeListComponent = ``;
-    // eslint-disable-next-line no-restricted-syntax
     for (const item of data) {
       const { img, title, town, locTime, price, isLike, chatCount, likeCount } =
         item;
-      // eslint-disable-next-line no-await-in-loop
       likeListComponent += await productListItem.render(
         false,
         img,

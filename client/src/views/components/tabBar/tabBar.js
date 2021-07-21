@@ -5,9 +5,7 @@ const tabBar = {
   render: async (tabTextArr, initialActiveNum) => {
     let tabButtonItems = ``;
 
-    // eslint-disable-next-line no-restricted-syntax
     for (const [idx, text] of tabTextArr.entries()) {
-      // eslint-disable-next-line no-await-in-loop
       tabButtonItems += await tab.render(text, initialActiveNum === idx);
     }
     const view = `<div class="tab-bar">${tabButtonItems}</div>`;

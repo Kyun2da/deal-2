@@ -4,11 +4,8 @@ import chatListItem from '../../chatListItem/chatListItem';
 const chatList = {
   render: async () => {
     let chatListComponent = ``;
-
-    // eslint-disable-next-line no-restricted-syntax
     for (const item of data) {
       const { username, message, timestamp, count, img } = item;
-      // eslint-disable-next-line no-await-in-loop
       chatListComponent += await chatListItem.render(
         username,
         message,
