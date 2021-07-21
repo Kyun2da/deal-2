@@ -5,10 +5,10 @@ import './productListItem.css';
 const productListItem = {
   render: async (
     isSellerItem,
-    img,
+    image,
     title,
     town,
-    locTime,
+    createdAt,
     price,
     isLike,
     chatCount,
@@ -17,18 +17,24 @@ const productListItem = {
     const heartIcon = await icon.render(
       'src/images/heart.svg',
       '좋아요',
-      'icon'
+      'heart-icon'
     );
     const emptyHeartIcon = await icon.render(
       'src/images/empty-heart.svg',
-      '좋아요',
-      'icon'
+      '빈하트',
+      'empty-heart-icon'
     );
 
-    const chatIcon = await icon.render(
+    const emptySmallHeartIcon = await icon.render(
+      'src/images/empty-heart.svg',
+      '빈하트',
+      'nonclick-icon'
+    );
+
+    const chatSmallIcon = await icon.render(
       'src/images/message-square.svg',
       '채팅 아이콘',
-      'icon'
+      'nonclick-icon'
     );
 
     let topRightIcon;
@@ -45,7 +51,11 @@ const productListItem = {
       topRightIcon = emptyHeartIcon;
     }
 
-    const imgBoxItem = await imgBox.render(img, '이미지', 'large');
+    const imgBoxItem = await imgBox.render(
+      image || 'src/mockup/image.png',
+      '이미지',
+      'large'
+    );
 
     const view = `<article class="item-container">
                     ${imgBoxItem}
@@ -53,19 +63,19 @@ const productListItem = {
                         <div class="content-top">
                             <div>
                                 <div class="title">${title}</div>
-                                <div class="loc-time">${town} ∙ ${locTime}</div>
+                                <div class="loc-time">${town} ∙ ${createdAt}</div>
                                 <div class="price">${price}</div>
                             </div>
-                            <div>
+                            <div class="right-icon">
                                 ${topRightIcon}
                             </div>
                         </div>
                         <div class="content-down">
                             <div>
-                              ${chatIcon} ${chatCount}
+                              ${chatSmallIcon} ${chatCount}
                             </div>
                             <div>
-                              ${emptyHeartIcon} ${likeCount}
+                              ${emptySmallHeartIcon} ${likeCount}
                             </div>
                         </div>
                     </div>
