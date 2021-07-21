@@ -10,7 +10,7 @@ const locationBar = {
     );
     const view = `<div class="location-bar">
                     ${mapPinIcon}
-                    <div>${location}</div>
+                    <div class="town-value">${location}</div>
                   </div>`;
 
     return view;

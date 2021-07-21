@@ -19,7 +19,7 @@
   cursor: initial;
 }
 
-.write-page .delete-img-btn,
+.write-page .uploaded-img,
 .add-img-btn {
   margin-right: 16px;
 }
@@ -54,7 +54,8 @@
   margin-right: 16px;
 }
 
-.write-page textarea {
+.write-page textarea,
+.write-page input {
   margin: 0 20px;
   overflow: hidden;
   resize: none;
@@ -63,6 +64,15 @@
   height: 20px;
 }
 
+.write-page input:focus {
+  outline: 0;
+}
+
 .write-page textarea:focus {
   outline: 0;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
 }

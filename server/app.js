@@ -10,6 +10,8 @@ dotenv.config();
 
 const signupRouter = require('./routes/signup');
 const loginRouter = require('./routes/login');
+const uploadRouter = require('./routes/upload');
+const productRouter = require('./routes/product');
 
 const app = express();
 
@@ -29,5 +31,7 @@ app.use(
 
 app.use('/api/signup', signupRouter);
 app.use('/api/login', loginRouter);
+app.use('/api/upload', uploadRouter);
+app.use('/api/product', productRouter);
 
 module.exports = app;

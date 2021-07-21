@@ -19,6 +19,16 @@ const api = {
   put: (url, data) => {},
 
   delete: () => {},
+
+  postImage: (url, formData) => {
+    return fetch(`${BASE_URL}${url}`, {
+      method: 'POST',
+      body: formData,
+    })
+      .then((res) => res.json())
+      .then((json) => Promise.resolve(json))
+      .catch((err) => Promise.reject(err));
+  },
 };
 
 export default api;

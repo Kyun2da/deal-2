@@ -11,7 +11,7 @@ const deleteImgButton = {
       'delete-icon'
     );
     const view = `
-        <div class="delete-img-btn ">
+        <div class="uploaded-img ">
             ${imgBoxItem}
             ${deleteBtn}
         </div>
