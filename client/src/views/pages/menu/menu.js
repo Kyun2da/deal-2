@@ -1,5 +1,5 @@
-import changeActiveComponent from '../../../services/changeActiveComponent';
-import menuSlideAnimation from '../../../services/menuSlideAnimation';
+import changeActiveComponent from '../../../services/common/changeActiveComponent';
+import menuSlideAnimation from '../../../services/menu/menuSlideAnimation';
 import icon from '../../components/icon';
 import menuHeader from '../../components/menuHeader';
 import sellList from '../../components/menuTab/sellList';
