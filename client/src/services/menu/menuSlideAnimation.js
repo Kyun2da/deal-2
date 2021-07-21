@@ -1,8 +1,8 @@
-import chatList from '../views/components/menuTab/chatList';
-import likeList from '../views/components/menuTab/likeList';
-import sellList from '../views/components/menuTab/sellList';
-import getNodeIndex from './getNodeIndex';
-import slideAnimation from './slideAnimation';
+import chatList from '../../views/components/menuTab/chatList';
+import likeList from '../../views/components/menuTab/likeList';
+import sellList from '../../views/components/menuTab/sellList';
+import getNodeIndex from '../common/getNodeIndex';
+import slideAnimation from '../common/slideAnimation';
 import toggleDisableChildrenButton from './toggleDisableChildrenButton';
 
 const menuSlideAnimation = async (currentNode, { target }) => {

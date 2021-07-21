@@ -1,7 +1,7 @@
 import './chatBar.css';
 import textInput from '../textInput';
 import icon from '../icon';
-import changeSendIcon from '../../../services/changeSendIcon';
+import changeSendIcon from '../../../services/chatDetail/changeSendIcon';
 
 const iconData = {
   className: 'send-icon',

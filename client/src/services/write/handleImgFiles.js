@@ -1,5 +1,5 @@
-import deleteImgButton from '../views/components/imgButton/delete/deleteImgButton';
-import api from '../apis';
+import deleteImgButton from '../../views/components/imgButton/delete/deleteImgButton';
+import api from '../../apis';
 
 const handleImgFiles = async ({ target }) => {
   const $target = target;
