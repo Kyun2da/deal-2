@@ -24,7 +24,20 @@ const productBar = {
     return view;
   },
 
-  afterRender: async () => {},
+  afterRender: async () => {
+    const productBarButton = document.querySelector(
+      '.product-bar .button-medium'
+    );
+    if (productBarButton.innerText === '문의하기') {
+      productBarButton.addEventListener('click', () => {
+        window.location.href = '#/chatdetail';
+      });
+    } else {
+      productBarButton.addEventListener('click', () => {
+        window.location.href = '#/chatlist';
+      });
+    }
+  },
 };
 
 export default productBar;

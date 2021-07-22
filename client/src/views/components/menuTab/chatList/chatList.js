@@ -1,5 +1,6 @@
 import data from '../../../../mockup/chatList.json';
 import chatListItem from '../../chatListItem/chatListItem';
+import commingSoonModal from '../../commingSoonModal';
 
 const chatList = {
   render: async () => {
@@ -15,8 +16,11 @@ const chatList = {
       );
     }
 
+    const commingSoonModalItem = await commingSoonModal.render();
+
     const view = `<div class="page">
-                    ${chatListComponent}     
+                    ${chatListComponent}
+                    ${commingSoonModalItem}
                   </div>`;
 
     return view;

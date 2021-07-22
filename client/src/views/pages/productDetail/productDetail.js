@@ -107,6 +107,8 @@ const productDetail = {
     heartIcon.addEventListener('click', (e) => {
       toggleHeartIcon(e);
     });
+
+    await productBar.afterRender();
   },
 };
 

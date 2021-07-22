@@ -1,5 +1,6 @@
 import chatBar from '../../components/chatBar/chatBar';
 import chatBubble from '../../components/chatBubble/chatBubble';
+import commingSoonModal from '../../components/commingSoonModal';
 import icon from '../../components/icon';
 import infoProduct from '../../components/infoProduct/infoProduct';
 import menuHeader from '../../components/menuHeader/menuHeader';
@@ -46,6 +47,8 @@ const chatDetail = {
     );
     const message7 = await chatBubble.render('계세요?', false);
 
+    const commingSoonModalItem = await commingSoonModal.render();
+
     const chatBarItem = await chatBar.render();
     const view = `
         <div class="page chat-detail">
@@ -71,6 +74,7 @@ const chatDetail = {
             ${message7}
           </div>
           ${chatBarItem}
+          ${commingSoonModalItem}
         </div>
     `;
 
