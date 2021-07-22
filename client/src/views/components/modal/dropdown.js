@@ -25,7 +25,7 @@ const dropdown = {
     Array.from($dropdownElements)
       .pop()
       .addEventListener('click', () => {
-        window.location.href = '#/settown';
+        window.location.href = '#/town';
       });
   },
 };
