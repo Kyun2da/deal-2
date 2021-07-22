@@ -2,6 +2,10 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const dotenv = require('dotenv');
+const webpack = require('webpack');
+
+dotenv.config();
 
 module.exports = {
   entry: {
@@ -36,6 +40,12 @@ module.exports = {
       filename: 'style.css',
     }),
     new CleanWebpackPlugin(),
+    new webpack.DefinePlugin({
+      domain:
+        process.env.NODE_ENV === 'development'
+          ? JSON.stringify('http://localhost:3000')
+          : JSON.stringify(process.env.PRODUCTION_URL),
+    }),
   ],
   devServer: {
     hot: true,
