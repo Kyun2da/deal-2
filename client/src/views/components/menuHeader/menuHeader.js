@@ -1,7 +1,13 @@
 import './menuHeader.css';
 
 const menuHeader = {
-  render: async (link, frontIcon, backIcon, title = '', color = 'white') => {
+  render: async (
+    link = '#/',
+    frontIcon,
+    backIcon,
+    title = '',
+    color = 'white'
+  ) => {
     const backIconItem = backIcon
       ? `<button class="back-icon">${backIcon}</button>`
       : `<div class="empty-container"></div>`;
