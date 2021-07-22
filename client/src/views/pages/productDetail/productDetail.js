@@ -9,7 +9,7 @@ import api from '../../../apis';
 import utils from '../../../services/common/utils';
 import slide from '../../../services/common/imageSlider';
 import imgNavigation from '../../components/imgNavigation/imgNavigation';
-import toggleHeartIcon from '../../../services/common/toggleHearticon';
+import toggleHeartIcon from '../../../services/common/toggleHeartIcon';
 
 const productDetail = {
   render: async (oldURL) => {
