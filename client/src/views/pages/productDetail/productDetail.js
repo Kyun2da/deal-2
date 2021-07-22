@@ -27,7 +27,7 @@ const productDetail = {
       likeNum,
       image,
     } = result[0];
-    const myId = 'good2';
+    const myId = localStorage.getItem('id');
     const frontIcon = await icon.render(
       'src/images/chevron-left-white.svg',
       '뒤로 가기',
