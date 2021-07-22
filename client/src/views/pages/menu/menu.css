@@ -8,8 +8,12 @@
   border-bottom: none;
 }
 
+.menu .container {
+  height: calc(90vh - 56px);
+  overflow-y: scroll;
+}
+
 .menu .slide {
-  min-width: 435px;
   display: flex;
 }
 
