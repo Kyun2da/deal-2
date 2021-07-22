@@ -43,7 +43,7 @@ module.exports = {
     new webpack.DefinePlugin({
       domain:
         process.env.NODE_ENV === 'development'
-          ? JSON.stringify('http://localhost:3000')
+          ? JSON.stringify('http://localhost:3000/api')
           : JSON.stringify(process.env.PRODUCTION_URL),
     }),
   ],
