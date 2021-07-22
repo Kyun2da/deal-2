@@ -20,3 +20,8 @@
 .menu .page {
   min-width: 435px;
 }
+
+.menu .product-dropdown {
+  position: relative;
+  right: -200px;
+}

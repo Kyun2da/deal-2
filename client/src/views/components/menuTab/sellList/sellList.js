@@ -1,6 +1,7 @@
 import api from '../../../../apis';
 import productOnClick from '../../../../services/common/productOnClick';
 import utils from '../../../../services/common/utils';
+import productDropdown from '../../modal/productDropdown';
 import productListItem from '../../productListItem/productListItem';
 
 const sellList = {
@@ -39,9 +40,12 @@ const sellList = {
       sellListComponent += '로그인이 필요합니다!';
     }
 
+    const productDropdownItem = await productDropdown.render();
+
     const view = `<div class="page">
                     <div class="product-list">
                       ${sellListComponent}
+                      ${productDropdownItem}
                     </div>
                   </div>
     `;
@@ -51,8 +55,25 @@ const sellList = {
   afterRender: async () => {
     const productContainer = document.querySelector('.menu .product-list');
     const { children } = productContainer;
+    const productDropdownItem = document.querySelector('.product-dropdown');
+
     Array.from(children).forEach((item) => {
-      productOnClick(item);
+      if (item.classList.contains('item-container')) {
+        productOnClick(item);
+        const icon = item.querySelector('.right-icon');
+        icon.addEventListener('click', (e) => {
+          e.stopPropagation();
+          productDropdownItem.classList.toggle('active');
+          productDropdownItem.style.top = `${e.clientY - 450}px`;
+        });
+      }
+    });
+
+    const menuPage = document.querySelector('.page.menu');
+    menuPage.addEventListener('click', () => {
+      if (productDropdownItem.classList.contains('active')) {
+        productDropdownItem.classList.remove('active');
+      }
     });
   },
 };
