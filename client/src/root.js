@@ -49,7 +49,7 @@ const router = async (e) => {
   if (e.type === 'hashchange') {
     const backPageUrl = e.oldURL.split('#')[1] || '/';
     // leftPages에 있는 url로 들어갈 시
-    if (leftPages.includes(currentPageUrl)) {
+    if (leftPages.includes(currentPageUrl) && mainpage.includes(backPageUrl)) {
       const newContent = await page.render();
       content.removeChild(content.firstChild);
       content.insertAdjacentHTML('afterbegin', newContent);
@@ -57,7 +57,10 @@ const router = async (e) => {
         slideAnimation(content.firstChild, pageWidth);
       }, 100);
       // rightPages에 있는 url로 들어갈 시
-    } else if (rightPages.includes(currentPageUrl)) {
+    } else if (
+      rightPages.includes(currentPageUrl) &&
+      mainpage.includes(backPageUrl)
+    ) {
       const newContent = await page.render();
       content.removeChild(content.lastChild);
       content.insertAdjacentHTML('beforeend', newContent);
@@ -68,12 +71,20 @@ const router = async (e) => {
       // 메인으로 돌아갈 시
     } else if (mainpage.includes(currentPageUrl)) {
       if (leftPages.includes(backPageUrl)) {
+        content.removeChild(content.lastChild);
+        content.removeChild(content.lastChild);
+        content.insertAdjacentHTML('beforeend', await page.render());
+        content.insertAdjacentHTML('beforeend', emptyNextElement);
         content.firstChild.addEventListener('transitionend', () => {
           content.removeChild(content.firstChild);
           content.insertAdjacentHTML('afterbegin', emptyPrevElement);
         });
         slideAnimation(content.firstChild, -pageWidth);
       } else if (rightPages.includes(backPageUrl)) {
+        content.removeChild(content.firstChild);
+        content.removeChild(content.firstChild);
+        content.insertAdjacentHTML('afterbegin', await page.render());
+        content.insertAdjacentHTML('afterbegin', emptyPrevElement);
         content.lastChild.addEventListener('transitionend', () => {
           content.removeChild(content.lastChild);
           content.insertAdjacentHTML('beforeend', emptyNextElement);
@@ -81,30 +92,34 @@ const router = async (e) => {
         slideAnimation(content.lastChild, pageWidth);
       } else {
         content.innerHTML = emptyPrevElement;
-        content.innerHTML += await page.render();
-        content.innerHTML += emptyNextElement;
+        content.insertAdjacentHTML('beforeend', await page.render());
+        content.insertAdjacentHTML('beforeend', emptyNextElement);
       }
     } else {
       content.innerHTML = emptyPrevElement;
-      content.innerHTML += await page.render(backPageUrl);
-      content.innerHTML += emptyNextElement;
+      content.insertAdjacentHTML('beforeend', await page.render(backPageUrl));
+      content.insertAdjacentHTML('beforeend', emptyNextElement);
     }
   } else {
     // 돔 로드일 때는 그냥 페이지 바로 렌더링
     if (leftPages.includes(currentPageUrl)) {
-      content.innerHTML += await page.render();
+      content.innerHTML = await page.render();
       slideAnimation(content.firstChild, pageWidth);
-    } else content.innerHTML += emptyPrevElement;
+    } else content.innerHTML = emptyPrevElement;
     if (
       !leftPages.includes(currentPageUrl) &&
       !rightPages.includes(currentPageUrl)
     )
-      content.innerHTML += await page.render();
-    else content.innerHTML += await routes[mainpage[0]].render();
+      content.insertAdjacentHTML('beforeend', await page.render());
+    else
+      content.insertAdjacentHTML(
+        'beforeend',
+        await routes[mainpage[0]].render()
+      );
     if (rightPages.includes(currentPageUrl)) {
-      content.innerHTML += await page.render();
+      content.insertAdjacentHTML('beforeend', await page.render());
       slideAnimation(content.lastChild, -pageWidth);
-    } else content.innerHTML += emptyNextElement;
+    } else content.insertAdjacentHTML('beforeend', emptyNextElement);
   }
 
   await page.afterRender();
