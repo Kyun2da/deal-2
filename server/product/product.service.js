@@ -1,10 +1,13 @@
 const db = require('../db');
 
-const selectProduct = async (town, category) => {
+const selectProduct = async ({ category, town }) => {
   try {
     const connection = await db.getConnection(async (conn) => conn);
-    const selectProductSql = `SELECT * FROM product ORDER BY createdAt DESC`;
-    const [products] = await connection.query(selectProductSql);
+    const selectProductSql = `SELECT * FROM product WHERE category=? ORDER BY createdAt DESC`;
+    const [products] = await connection.query(selectProductSql, [
+      decodeURIComponent(category),
+      decodeURIComponent(town),
+    ]);
     const selectImgSql = `SELECT url FROM image WHERE productIdx=?`;
     for (const [idx, product] of products.entries()) {
       const [imageUrl] = await connection.query(selectImgSql, [product.idx]);
