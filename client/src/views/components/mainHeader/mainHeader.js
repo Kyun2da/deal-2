@@ -10,7 +10,7 @@ const townName = {
   },
   afterRender: async (name) => {
     const $townName = document.querySelector('.town-name');
-    $townName.innerHTML = name;
+    $townName.innerHTML = name || '전체';
   },
 };
 
