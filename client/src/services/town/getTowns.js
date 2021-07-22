@@ -8,12 +8,12 @@ const getTowns = async (container) => {
   const { town1, town2 } = await api.get(
     `/town?${utils.encodeQueryData({ id })}`
   );
-  const townArray = [town1];
-  if (town2) townArray.push(town2);
+  const townArray = [town1, town2];
   for (const town of townArray) {
     const locationButton = await location.render(town);
     $buttonContainer.innerHTML += locationButton;
   }
+  location.afterRender();
 };
 
 export default getTowns;

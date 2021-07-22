@@ -1,6 +1,7 @@
 import './inputPopup.css';
 import textInput from '../textInput';
-import changeConfirmButton from '../../../services/changeConfirmButton';
+import changeConfirmButton from '../../../services/town/changeConfirmButton';
+import putTown from '../../../services/town/putTown';
 
 const inputPopup = {
   render: async () => {
@@ -12,6 +13,7 @@ const inputPopup = {
       '시·구 제외, 동만 입력'
     );
     const view = `
+      <div class="popup-area">
         <div class="input-popup">
           <p class="popup-message">
             ${popupMessage}
@@ -26,6 +28,7 @@ const inputPopup = {
             </Button>
           </div>
         </div>
+      </div>
     `;
 
     return view;
@@ -35,6 +38,20 @@ const inputPopup = {
     const className = '.input-popup';
     const $popup = document.querySelector(className);
     $popup.addEventListener('input', (e) => changeConfirmButton(className, e));
+    const $popupArea = document.querySelector('.popup-area');
+    $popupArea.addEventListener('click', ({ target }) => {
+      if (
+        target.className === 'popup-area' ||
+        target.className === 'cancel-button'
+      )
+        $popupArea.remove();
+    });
+    const $confirmButton = document.querySelector('.confirm-button');
+    $confirmButton.addEventListener('click', async ({ target }) => {
+      if (target.classList.contains('active')) {
+        putTown($popupArea.querySelector('input').value);
+      }
+    });
   },
 };
 
