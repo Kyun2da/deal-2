@@ -12,7 +12,7 @@ import imgNavigation from '../../components/imgNavigation/imgNavigation';
 import toggleHeartIcon from '../../../services/common/toggleHearticon';
 
 const productDetail = {
-  render: async () => {
+  render: async (oldURL) => {
     const idx = window.location.hash.split('/')[2];
     const { result } = await api.get(`/product/${idx}`);
     const {
@@ -43,7 +43,7 @@ const productDetail = {
     );
 
     const productHeader = await menuHeader.render(
-      '#/',
+      `#${oldURL}`,
       frontIcon,
       backIcon,
       '',

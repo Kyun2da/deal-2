@@ -86,7 +86,7 @@ const router = async (e) => {
       }
     } else {
       content.innerHTML = emptyPrevElement;
-      content.innerHTML += await page.render();
+      content.innerHTML += await page.render(backPageUrl);
       content.innerHTML += emptyNextElement;
     }
   } else {
