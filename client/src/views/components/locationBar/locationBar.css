@@ -14,3 +14,19 @@
   margin-right: 4px;
   width: 20px;
 }
+
+.location-bar .map-pin:hover {
+  cursor: default;
+}
+
+.town-value {
+  margin-left: 20px;
+}
+
+.town-value:hover {
+  cursor: pointer;
+}
+
+.town-value.active {
+  color: var(--primary);
+}

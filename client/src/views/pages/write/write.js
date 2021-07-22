@@ -9,6 +9,7 @@ import handleImgFiles from '../../../services/write/handleImgFiles';
 import horizontalScroll from '../../../services/write/horizontalScroll';
 import toggleCategory from '../../../services/write/toggleCategory';
 import essentialInfoCheck from '../../../services/write/essentialInfoCheck';
+import getTown from '../../../services/write/getTown';
 
 const write = {
   render: async () => {
@@ -53,7 +54,7 @@ const write = {
       categoryItems += await category.render(item);
     }
 
-    const locationBarItem = await locationBar.render('역삼동');
+    const locationBarItem = await locationBar.render();
 
     const view = `<div class="page write-page">
                     ${writeHeader}
@@ -93,6 +94,8 @@ const write = {
     toggleCategory(document.querySelector('.write-page .category-container'));
 
     essentialInfoCheck();
+    const townArray = await getTown();
+    locationBar.afterRender(townArray);
   },
 };
 
