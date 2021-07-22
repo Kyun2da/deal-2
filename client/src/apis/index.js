@@ -26,7 +26,18 @@ const api = {
       .catch((err) => Promise.reject(err));
   },
 
-  put: (url, data) => {},
+  put: (url, data) => {
+    return fetch(`${BASE_URL}${url}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((json) => Promise.resolve(json))
+      .catch((err) => Promise.reject(err));
+  },
 
   delete: () => {},
 
