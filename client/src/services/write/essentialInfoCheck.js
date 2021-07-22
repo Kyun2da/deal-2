@@ -43,14 +43,12 @@ const isActiveCheckBtn = async () => {
         (image) => image.querySelector('.img-box.medium').src
       );
       const locationBar = document.querySelector('.location-bar');
-      const townValue =
-        locationBar.querySelector('.town-value.active').innerText;
 
       completeBtn.addEventListener('click', async () => {
         const productData = {
           sellerId: localStorage.getItem('id'),
           images: imgUrlArr,
-          town: townValue,
+          town: locationBar.querySelector('.town-value.active').innerText,
           title: titleTextArea.value,
           category: categoryValue,
           price: priceContainer.value,
