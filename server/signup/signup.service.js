@@ -6,9 +6,8 @@ const insertUserInfo = async (id, town1) => {
     const sql = `INSERT INTO user(id,town1) VALUES(?,?)`;
     await connection.query(sql, [id, town1]);
     connection.release();
-    return true;
   } catch (err) {
-    return false;
+    throw new Error(err);
   }
 };
 
