@@ -4,6 +4,7 @@ import './productListItem.css';
 
 const productListItem = {
   render: async (
+    idx,
     isSellerItem,
     image,
     title,
@@ -14,6 +15,7 @@ const productListItem = {
     chatCount,
     likeCount
   ) => {
+    const id = localStorage.getItem('id');
     const heartIcon = await icon.render(
       'src/images/heart.svg',
       '좋아요',
@@ -38,7 +40,9 @@ const productListItem = {
     );
 
     let topRightIcon;
-    if (isSellerItem) {
+    if (!id) {
+      topRightIcon = '';
+    } else if (isSellerItem) {
       const kebabIcon = await icon.render(
         'src/images/more-vertical.svg',
         '더보기 아이콘',
@@ -57,7 +61,7 @@ const productListItem = {
       'large'
     );
 
-    const view = `<article class="item-container">
+    const view = `<article class="item-container" name="${idx}">
                     ${imgBoxItem}
                     <div class="content-container">
                         <div class="content-top">

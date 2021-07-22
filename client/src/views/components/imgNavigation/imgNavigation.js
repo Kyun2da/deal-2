@@ -1,4 +1,4 @@
-import changeActiveComponent from '../../../services/changeActiveComponent';
+import changeActiveComponent from '../../../services/common/changeActiveComponent';
 import imgNav from '../imgNav/imgNav';
 import './imgNavigation.css';
 
@@ -16,12 +16,7 @@ const imgNavigation = {
     return view;
   },
 
-  afterRender: async () => {
-    const $imgNavi = document.querySelector('.img-navigation');
-    $imgNavi.addEventListener('click', (e) =>
-      changeActiveComponent('.img-navigation', e)
-    );
-  },
+  afterRender: async () => {},
 };
 
 export default imgNavigation;

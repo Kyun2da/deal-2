@@ -1,5 +1,26 @@
 const db = require('../db');
 
+const selectDetailProduct = async (id) => {
+  try {
+    const selectProductSql = `SELECT * FROM product WHERE idx=? ORDER BY createdAt DESC`;
+    const connection = await db.getConnection(async (conn) => conn);
+    const [product] = await connection.query(selectProductSql, [id]);
+
+    const selectImgSql = `SELECT url FROM image WHERE productIdx=?`;
+
+    const [imageUrl] = await connection.query(selectImgSql, [id]);
+    const arr = [];
+    if (imageUrl.length > 0) {
+      imageUrl.forEach((url) => arr.push(url.url));
+      product[0] = { ...product[0], image: [...arr] };
+    }
+    connection.release();
+    return { success: true, result: product };
+  } catch (err) {
+    return { success: false, error: err };
+  }
+};
+
 const selectProduct = async ({ category, town }) => {
   try {
     const categoryQuery = decodeURIComponent(category);
@@ -66,4 +87,4 @@ const insertProduct = async ({
   }
 };
 
-module.exports = { selectProduct, insertProduct };
+module.exports = { selectDetailProduct, selectProduct, insertProduct };
