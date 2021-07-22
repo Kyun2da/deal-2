@@ -2,7 +2,7 @@ const express = require('express');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const dotenv = require('dotenv');
-const session = require('express-session');
+const session = require('cookie-session');
 const cors = require('cors');
 
 dotenv.config();
