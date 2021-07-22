@@ -8,9 +8,9 @@
   border-bottom: none;
 }
 
-.menu .container {
+.menu .product-list {
   height: calc(90vh - 56px);
-  overflow-y: scroll;
+  overflow: auto;
 }
 
 .menu .slide {
