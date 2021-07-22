@@ -7,8 +7,9 @@ const productBar = {
     const imageSrc = isLike
       ? 'src/images/heart.svg'
       : 'src/images/empty-heart.svg';
+    const imageClass = isLike ? 'heart-icon' : 'empty-heart-icon';
     const buttonMessage = isSeller ? '채팅 목록 보기' : '문의하기';
-    const heartIcon = await icon.render(imageSrc, '좋아요', 'icon');
+    const heartIcon = await icon.render(imageSrc, '좋아요', imageClass);
     const mediumButton = await button.render('button-medium', buttonMessage);
     const view = `
       <div class="product-bar">

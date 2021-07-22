@@ -9,6 +9,7 @@ import api from '../../../apis';
 import utils from '../../../services/common/utils';
 import slide from '../../../services/common/imageSlider';
 import imgNavigation from '../../components/imgNavigation/imgNavigation';
+import toggleHeartIcon from '../../../services/common/toggleHearticon';
 
 const productDetail = {
   render: async () => {
@@ -102,6 +103,12 @@ const productDetail = {
       sliderItems.classList.add('shift');
       slide(sliderItems);
     }
+
+    const heartIcon = document.querySelector('.product-bar').firstElementChild;
+    console.log(heartIcon);
+    heartIcon.addEventListener('click', (e) => {
+      toggleHeartIcon(e);
+    });
   },
 };
 
