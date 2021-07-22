@@ -46,6 +46,7 @@ const menuSlideAnimation = async (currentNode, { target }) => {
     if (targetIdx === 0) {
       const sellListItem = await sellList.render();
       $slideContainer.insertAdjacentHTML('afterbegin', sellListItem);
+      await sellList.afterRender();
     } else if (targetIdx === 1) {
       const chatListItem = await chatList.render();
       $slideContainer.insertAdjacentHTML('afterbegin', chatListItem);

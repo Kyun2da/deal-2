@@ -34,6 +34,7 @@ const menu = {
   },
   afterRender: async () => {
     const $tabBar = document.querySelector('.tab-bar');
+    await sellList.afterRender();
     $tabBar.addEventListener('click', (e) => {
       const currentActiveNode = document.querySelector(`.tab-bar .active`);
       changeActiveComponent('.tab-bar', e);
