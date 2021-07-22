@@ -14,6 +14,8 @@ const slide = (container) => {
   const cloneFirst = firstSlide.cloneNode(true);
   const cloneLast = lastSlide.cloneNode(true);
 
+  const imgNavigation = document.querySelector('.img-navigation').children;
+
   let index = 0;
   let allowShift = true;
 
@@ -47,13 +49,11 @@ const slide = (container) => {
         index -= 1;
       }
     }
-
     allowShift = false;
   }
 
   function dragEnd() {
     posFinal = items.offsetLeft;
-    items.style.cursor = 'grab';
     if (posFinal - posInitial < -threshold) {
       shiftSlide(1, 'drag');
     } else if (posFinal - posInitial > threshold) {
@@ -68,7 +68,6 @@ const slide = (container) => {
 
   function dragStart(e) {
     e.preventDefault();
-    items.style.cursor = 'grabbing';
     posInitial = items.offsetLeft;
 
     if (e.type === 'touchstart') {
@@ -93,6 +92,14 @@ const slide = (container) => {
       index = 0;
     }
 
+    Array.from(imgNavigation).forEach((nav, i) => {
+      if (nav.classList.contains('active')) {
+        nav.classList.remove('active');
+      }
+      if (i === index) {
+        nav.classList.add('active');
+      }
+    });
     allowShift = true;
   }
 

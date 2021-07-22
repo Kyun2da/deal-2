@@ -74,6 +74,10 @@
   width: 10000px;
 }
 
+.product-detail .slides.shift {
+  left: -435px;
+}
+
 .product-detail .slides.shifting {
   transition: left 0.2s ease-out;
 }
@@ -116,4 +120,10 @@
     rgba(0, 0, 0, 0) 87.36%,
     rgba(0, 0, 0, 0.24) 100%
   ); /* W3C */
+}
+
+.product-detail .img-navigation {
+  position: absolute;
+  bottom: 12px;
+  left: 181.5px;
 }

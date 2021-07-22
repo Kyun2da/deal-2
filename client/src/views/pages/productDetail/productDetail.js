@@ -8,6 +8,7 @@ import infoSaler from '../../components/infoSaler/infoSaler';
 import api from '../../../apis';
 import utils from '../../../services/common/utils';
 import slide from '../../../services/common/imageSlider';
+import imgNavigation from '../../components/imgNavigation/imgNavigation';
 
 const productDetail = {
   render: async () => {
@@ -49,11 +50,13 @@ const productDetail = {
     );
     const statusText = isSelling ? '판매중' : '판매완료';
     const statusButton = await status.render(statusText);
+    let imgNavigationItem = '';
     let imageItems = '';
     if (image) {
       for (const item of image) {
         imageItems += await imgBox.render(item, '롤러', 'gradient');
       }
+      imgNavigationItem += await imgNavigation.render(image?.length);
     } else {
       imageItems += await imgBox.render(
         'src/mockup/image.png',
@@ -75,6 +78,7 @@ const productDetail = {
                         <div id="slides" class="slides">
                           ${imageItems}
                         </div>
+                        ${imgNavigationItem}
                       </div>
                       <div class="text-container">
                         ${myId === sellerId ? statusButton : ''}
@@ -94,7 +98,10 @@ const productDetail = {
   },
   afterRender: async () => {
     const sliderItems = document.querySelector('.product-detail .slides');
-    if (sliderItems.children.length > 1) slide(sliderItems);
+    if (sliderItems.children.length > 1) {
+      sliderItems.classList.add('shift');
+      slide(sliderItems);
+    }
   },
 };
 
