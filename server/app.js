@@ -12,6 +12,7 @@ const loginRouter = require('./login/login.controller');
 const imageRouter = require('./image/image.controller');
 const productRouter = require('./product/product.controller');
 const townRouter = require('./town/town.controller');
+const sellListRouter = require('./sellList/sellList.controller');
 
 const app = express();
 
@@ -33,5 +34,6 @@ app.use('/api/login', loginRouter);
 app.use('/api/upload', imageRouter);
 app.use('/api/product', productRouter);
 app.use('/api/town', townRouter);
+app.use('/api/selllist', sellListRouter);
 
 module.exports = app;

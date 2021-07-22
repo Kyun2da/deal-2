@@ -19,7 +19,7 @@ const menuSlideAnimation = async (currentNode, { target }) => {
   $slideContainer.addEventListener(
     'transitionend',
     () => {
-      console.log('트랜지션끝');
+      // console.log('트랜지션끝');
 
       $slideContainer.style.transition = 'none';
       $slideContainer.style.transform = `translateX(0px)`;
@@ -29,9 +29,9 @@ const menuSlideAnimation = async (currentNode, { target }) => {
     { once: true }
   );
 
-  console.log(currentIdx, targetIdx);
+  // console.log(currentIdx, targetIdx);
   if (currentIdx < targetIdx) {
-    console.log('오른쪽에 두었다가 왼쪽으로 겹쳐와야함');
+    // console.log('오른쪽에 두었다가 왼쪽으로 겹쳐와야함');
     if (targetIdx === 1) {
       const chatListItem = await chatList.render();
       $slideContainer.insertAdjacentHTML('beforeend', chatListItem);
@@ -41,11 +41,12 @@ const menuSlideAnimation = async (currentNode, { target }) => {
     }
     slideAnimation($slideContainer, -435);
   } else if (currentIdx > targetIdx) {
-    console.log('왼쪽에 두었다가 오른쪽으로 겹쳐와야함');
+    // console.log('왼쪽에 두었다가 오른쪽으로 겹쳐와야함');
     $slideContainer.style.transform = 'translateX(-435px)';
     if (targetIdx === 0) {
       const sellListItem = await sellList.render();
       $slideContainer.insertAdjacentHTML('afterbegin', sellListItem);
+      await sellList.afterRender();
     } else if (targetIdx === 1) {
       const chatListItem = await chatList.render();
       $slideContainer.insertAdjacentHTML('afterbegin', chatListItem);

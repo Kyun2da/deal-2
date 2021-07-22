@@ -3,6 +3,7 @@ import './main.css';
 import { FAB } from '../../components/button';
 import changeDropdownDisplay from '../../../services/main/changeDropdownDisplay';
 import getProduct from '../../../services/main/getProduct';
+import utils from '../../../services/common/utils';
 
 const main = {
   render: async () => {
@@ -32,6 +33,11 @@ const main = {
     const $mainPage = document.querySelector('.main-page');
     $mainPage.addEventListener('click', changeDropdownDisplay);
     const $productContainer = document.querySelector('.product-list');
+    const town = localStorage.getItem('town');
+    const { category } = utils.parseQuery();
+    if (town && category)
+      window.location.href = `#?town=${town}&category=${category}`;
+    else if (town) window.location.href = `#?town=${town}`;
     getProduct($productContainer);
   },
 };

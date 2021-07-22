@@ -9,10 +9,10 @@ import api from '../../../apis';
 import utils from '../../../services/common/utils';
 import slide from '../../../services/common/imageSlider';
 import imgNavigation from '../../components/imgNavigation/imgNavigation';
-import toggleHeartIcon from '../../../services/common/toggleHearticon';
+import toggleHeartIcon from '../../../services/common/toggleHeartIcon';
 
 const productDetail = {
-  render: async () => {
+  render: async (oldURL) => {
     const idx = window.location.hash.split('/')[2];
     const { result } = await api.get(`/product/${idx}`);
     const {
@@ -43,7 +43,7 @@ const productDetail = {
     );
 
     const productHeader = await menuHeader.render(
-      '#/',
+      `#${oldURL}`,
       frontIcon,
       backIcon,
       '',
@@ -103,9 +103,7 @@ const productDetail = {
       sliderItems.classList.add('shift');
       slide(sliderItems);
     }
-
     const heartIcon = document.querySelector('.product-bar').firstElementChild;
-    console.log(heartIcon);
     heartIcon.addEventListener('click', (e) => {
       toggleHeartIcon(e);
     });

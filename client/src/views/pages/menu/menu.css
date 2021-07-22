@@ -8,8 +8,12 @@
   border-bottom: none;
 }
 
+.menu .product-list {
+  height: calc(90vh - 56px);
+  overflow: auto;
+}
+
 .menu .slide {
-  min-width: 435px;
   display: flex;
 }
 
