@@ -1,7 +1,18 @@
 const express = require('express');
-const { selectProduct, insertProduct } = require('./product.service');
+const {
+  selectProduct,
+  insertProduct,
+  selectDetailProduct,
+} = require('./product.service');
 
 const router = express.Router();
+
+router.get('/:id', async (req, res) => {
+  const { success, result } = await selectDetailProduct(req.params.id);
+  if (success) {
+    res.status(200).send({ result });
+  } else res.status(500).send('server error');
+});
 
 router.get('/', async (req, res) => {
   const { success, result } = await selectProduct(req.query);
