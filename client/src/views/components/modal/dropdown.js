@@ -19,14 +19,18 @@ const dropdown = {
 
   afterRender: async () => {
     const $mainDropdown = document.querySelector('.main-dropdown');
-    const $dropdownElements = $mainDropdown.querySelectorAll(
-      '.main-dropdown-element'
+    const $dropdownElements = Array.from(
+      $mainDropdown.querySelectorAll('.main-dropdown-element')
     );
-    Array.from($dropdownElements)
-      .pop()
-      .addEventListener('click', () => {
-        window.location.href = '#/town';
+    $dropdownElements.pop().addEventListener('click', () => {
+      window.location.href = '#/town';
+    });
+    $dropdownElements.forEach(($dropdownElement) => {
+      $dropdownElement.addEventListener('click', ({ target }) => {
+        localStorage.setItem('town', target.innerText);
+        window.location.href = `#?town=${target.innerText}`;
       });
+    });
   },
 };
 
