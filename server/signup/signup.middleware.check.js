@@ -14,8 +14,8 @@ const checkDuplicatedId = async (req, res, next) => {
     const sql = `SELECT * from user WHERE id = ?`;
     const [data] = await connection.query(sql, [id]);
     connection.release();
-    if (data) {
-      res.redirect(`${process.env.FRONT_URL}/signup`);
+    if (data.length > 0) {
+      res.status(409).redirect(`${process.env.FRONT_URL}/signup`);
     }
     next();
   } catch (err) {
