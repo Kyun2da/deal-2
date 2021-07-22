@@ -36,6 +36,7 @@ const category = {
     for (const item of categoryData) {
       categoryItems += await categoryListItem.render(item);
     }
+
     const view = `<div class="page category-page">
                     ${categoryHeader}
                     <div class="category-container">
@@ -45,7 +46,16 @@ const category = {
 
     return view;
   },
-  afterRender: async () => {},
+  afterRender: async () => {
+    const categoryContainer = document.querySelector('.category-container');
+    Array.from(categoryContainer.children).forEach((item) => {
+      const imageContainer = item.firstElementChild;
+      imageContainer.addEventListener('click', (e) => {
+        const categoryQuery = e.target.getAttribute('alt');
+        window.location.href = `#?category=${categoryQuery}`;
+      });
+    });
+  },
 };
 
 export default category;

@@ -1,18 +1,22 @@
 const utils = {
-  // --------------------------------
-  //  Parse a url and break it into resource, id and verb
-  // --------------------------------
-  parseRequestURL: () => {
-    const url = window.location.hash.slice(1).toLowerCase() || '/';
-    const r = url.split('/');
-    const request = {
-      resource: null,
-      id: null,
-      verb: null,
-    };
-    [, request.resource, request.id, request.verb] = r;
+  parseQuery: () => {
+    const hash = window.location.hash.substr(2);
 
-    return request;
+    const result = hash.split('&').reduce((res, item) => {
+      const parts = item.split('=');
+      const [key, value] = parts;
+      res[key] = value;
+      return res;
+    }, {});
+    console.log(result);
+    return result;
+  },
+
+  parseHostURL: () => {
+    // url 이 그냥 /#/myinfo 면 /myinfo만 뱉는다.
+    // url 이 /#?category=asdasdas 면 '/' 만 뱉는다.
+    const url = new URL(window.location.href);
+    return url.hash.split('?')[0].slice(1);
   },
 
   encodeQueryData: (data) => {

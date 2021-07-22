@@ -10,3 +10,7 @@
 .category-list-item .title {
   margin-top: 12px;
 }
+
+.category-list-item img {
+  cursor: pointer;
+}
