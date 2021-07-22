@@ -8,7 +8,6 @@ const utils = {
       res[key] = value;
       return res;
     }, {});
-    console.log(result);
     return result;
   },
 
