@@ -1,4 +1,17 @@
+.popup-area {
+  width: 100%;
+  height: 90vh;
+  position: absolute;
+  top: 0px;
+  display: flex;
+  justify-content: center;
+  background-color: rgba(100, 100, 100, 0.3);
+  z-index: 1;
+}
+
 .input-popup {
+  position: absolute;
+  top: 20%;
   width: 320px;
   height: 146px;
   border-radius: 10px;
@@ -9,6 +22,7 @@
   flex-direction: column;
   justify-content: center;
   padding: 20px;
+  z-index: 2;
 }
 
 .popup-message {
@@ -28,6 +42,11 @@
   font-size: 16px;
   font-weight: bold;
   background-color: inherit;
+}
+
+.cancel-button:hover,
+.confirm-button.active:hover {
+  cursor: pointer;
 }
 
 .popup-buttons > .confirm-button {
