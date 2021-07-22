@@ -3,12 +3,14 @@ import productListItem from '../../views/components/productListItem';
 import toggleHeartIcon from '../common/toggleHeartIcon';
 import utils from '../common/utils';
 
-const getProduct = async (container, categoryParams, townParams) => {
+const getProduct = async (container) => {
+  const parameter = utils.parseQuery();
   const paramUrl = utils.encodeQueryData({
-    category: categoryParams,
-    town: townParams,
+    category: parameter.category,
+    town: parameter.town,
   });
-  const url = `/product${paramUrl}`;
+  const questionMark = paramUrl ? '?' : '';
+  const url = `/product${questionMark}${paramUrl}`;
 
   const products = await api.get(url);
   const productContainer = container;
