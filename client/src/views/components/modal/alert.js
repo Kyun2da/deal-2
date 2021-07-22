@@ -1,11 +1,11 @@
+import deleteTown from '../../../services/town/deleteTown';
 import './alert.css';
 
 const alert = {
-  render: async () => {
-    const alertMessage = '정말 이 채팅방을 나가시겠습니까?';
+  render: async (alertMessage, confirmMessage) => {
     const cancelMessage = '취소';
-    const confirmMessage = '나가기';
     const view = `
+    <div class="alert-area">
         <div class="alert">
             <div class="alert-message">
                 ${alertMessage}
@@ -19,12 +19,26 @@ const alert = {
                 </Button>
             </div>
         </div>
+    </div>
     `;
 
     return view;
   },
 
-  afterRender: async () => {},
+  afterRender: async (calledIndex) => {
+    const $alertArea = document.querySelector('.alert-area');
+    $alertArea.addEventListener('click', ({ target }) => {
+      if (
+        target.className === 'alert-area' ||
+        target.className === 'cancel-button'
+      )
+        $alertArea.remove();
+    });
+    const $confirmButton = document.querySelector('.confirm-button');
+    $confirmButton.addEventListener('click', async () => {
+      deleteTown(calledIndex);
+    });
+  },
 };
 
 export default alert;
