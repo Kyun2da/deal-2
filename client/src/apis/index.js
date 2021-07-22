@@ -1,5 +1,4 @@
 const BASE_URL = domain;
-console.log(domain);
 
 const api = {
   get: (url) => {
