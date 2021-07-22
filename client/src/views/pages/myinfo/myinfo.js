@@ -35,6 +35,7 @@ const myinfo = {
     const logoutButton = document.querySelector('.button-large');
     logoutButton.addEventListener('click', () => {
       localStorage.removeItem('id');
+      localStorage.removeItem('town');
       window.location.href = '#/';
     });
   },

@@ -63,10 +63,10 @@ const mainHeader = {
   afterRender: async () => {
     const $mapContainer = document.querySelector('.map-container');
     if (localStorage.getItem('id')) {
-      const userTown1 = await getTown($mapContainer);
+      await getTown($mapContainer);
       await dropdown.afterRender();
       const town = localStorage.getItem('town');
-      await townName.afterRender(town || userTown1);
+      await townName.afterRender(town);
     }
   },
 };
