@@ -103,9 +103,7 @@ const productDetail = {
       sliderItems.classList.add('shift');
       slide(sliderItems);
     }
-
     const heartIcon = document.querySelector('.product-bar').firstElementChild;
-    console.log(heartIcon);
     heartIcon.addEventListener('click', (e) => {
       toggleHeartIcon(e);
     });
