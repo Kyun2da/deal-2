@@ -10,6 +10,7 @@ import utils from '../../../services/common/utils';
 import slide from '../../../services/common/imageSlider';
 import imgNavigation from '../../components/imgNavigation/imgNavigation';
 import toggleHeartIcon from '../../../services/common/toggleHeartIcon';
+import productDropdown from '../../components/modal/productDropdown';
 
 const productDetail = {
   render: async (oldURL) => {
@@ -72,8 +73,11 @@ const productDetail = {
       myId === sellerId,
       price
     );
+
+    const productModal = await productDropdown.render();
     const view = `<div class="page product-detail">
                     ${productHeader}
+                    ${productModal}
                     <div class="product-container">
                       <div class="wrapper">
                         <div id="slides" class="slides">
@@ -109,6 +113,21 @@ const productDetail = {
     });
 
     await productBar.afterRender();
+    const kebabIcon = document.querySelector('.icon.more');
+    const productDropdownItem = document.querySelector('.product-dropdown');
+    if (kebabIcon) {
+      kebabIcon.addEventListener('click', async (e) => {
+        e.stopPropagation();
+        productDropdownItem.classList.toggle('active');
+      });
+    }
+
+    const productpage = document.querySelector('.page.product-detail');
+    productpage.addEventListener('click', () => {
+      if (productDropdownItem.classList.contains('active')) {
+        productDropdownItem.classList.remove('active');
+      }
+    });
   },
 };
 
