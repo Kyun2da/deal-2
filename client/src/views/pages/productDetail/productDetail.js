@@ -43,7 +43,7 @@ const productDetail = {
     );
 
     const productHeader = await menuHeader.render(
-      `#${oldURL}`,
+      `#${oldURL || '/'}`,
       frontIcon,
       backIcon,
       '',
