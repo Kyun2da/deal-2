@@ -1,3 +1,4 @@
+import commingSoonModal from '../../components/commingSoonModal';
 import icon from '../../components/icon';
 import menuHeader from '../../components/menuHeader';
 import chatList from '../../components/menuTab/chatList';
@@ -17,12 +18,14 @@ const chatListPage = {
       'off-white'
     );
 
+    const commingSoonModalItem = await commingSoonModal.render();
     const chatListItem = await chatList.render();
     const view = `<div class="page chatlist">
                     ${chatListHeader}
                     <div class="chat-list-container">
                         ${chatListItem}
                     </div>
+                    ${commingSoonModalItem}
                   </div>
 
     `;
