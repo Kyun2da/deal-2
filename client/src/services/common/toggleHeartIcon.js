@@ -1,6 +1,8 @@
 import icon from '../../views/components/icon';
 
-const toggleHeartIcon = async ({ target }) => {
+const toggleHeartIcon = async (e) => {
+  const { target } = e;
+  e.stopPropagation();
   const parentEl = target.parentNode;
   if (target.classList.contains('empty-heart-icon')) {
     const heartBtnTemplate = document.createElement('template');

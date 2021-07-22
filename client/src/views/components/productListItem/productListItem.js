@@ -4,6 +4,7 @@ import './productListItem.css';
 
 const productListItem = {
   render: async (
+    idx,
     isSellerItem,
     image,
     title,
@@ -57,7 +58,7 @@ const productListItem = {
       'large'
     );
 
-    const view = `<article class="item-container">
+    const view = `<article class="item-container" name="${idx}">
                     ${imgBoxItem}
                     <div class="content-container">
                         <div class="content-top">
