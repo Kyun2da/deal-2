@@ -23,21 +23,20 @@ const selectDetailProduct = async (id) => {
 
 const selectProduct = async ({ category, town }) => {
   try {
-    const categoryQuery = decodeURIComponent(category);
-    const townQuery = decodeURIComponent(town);
+    const categoryQuery = category ? decodeURIComponent(category) : category;
+    const townQuery = town ? decodeURIComponent(town) : town;
     let selectProductSql;
-    if (categoryQuery === 'undefined' && townQuery === 'undefined')
+    if (!(categoryQuery || townQuery))
       selectProductSql = `SELECT * FROM product ORDER BY createdAt DESC`;
-    else if (categoryQuery === 'undefined')
+    else if (!categoryQuery)
       selectProductSql = `SELECT * FROM product WHERE town=? ORDER BY createdAt DESC`;
-    else if (townQuery === 'undefined')
+    else if (!townQuery)
       selectProductSql = `SELECT * FROM product WHERE category=? ORDER BY createdAt DESC`;
     else
       selectProductSql = `SELECT * FROM product WHERE category=? AND town=? ORDER BY createdAt DESC`;
     const connection = await db.getConnection(async (conn) => conn);
-
     const [products] = await connection.query(selectProductSql, [
-      categoryQuery,
+      categoryQuery || townQuery,
       townQuery,
     ]);
 
