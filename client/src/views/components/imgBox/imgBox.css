@@ -23,7 +23,9 @@
 }
 
 .img-box.gradient {
-  width: 100%;
+  object-fit: contain;
+  max-width: 435px;
+  mix-blend-mode: multiply;
   background-color: linear-gradient(
     180deg,
     rgba(0, 0, 0, 0.24) 0%,

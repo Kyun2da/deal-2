@@ -2,12 +2,12 @@ import icon from '../../components/icon';
 import imgBox from '../../components/imgBox';
 import menuHeader from '../../components/menuHeader';
 import productBar from '../../components/productBar/productBar';
-import data from '../../../mockup/productDetail.json';
 import './productDetail.css';
 import { status } from '../../components/button';
 import infoSaler from '../../components/infoSaler/infoSaler';
 import api from '../../../apis';
 import utils from '../../../services/common/utils';
+import slide from '../../../services/common/imageSlider';
 
 const productDetail = {
   render: async () => {
@@ -49,11 +49,18 @@ const productDetail = {
     );
     const statusText = isSelling ? '판매중' : '판매완료';
     const statusButton = await status.render(statusText);
-    const img = await imgBox.render(
-      image?.[0] || 'src/mockup/image.png',
-      '롤러',
-      'gradient'
-    );
+    let imageItems = '';
+    if (image) {
+      for (const item of image) {
+        imageItems += await imgBox.render(item, '롤러', 'gradient');
+      }
+    } else {
+      imageItems += await imgBox.render(
+        'src/mockup/image.png',
+        '롤러',
+        'gradient'
+      );
+    }
 
     const infoSalerItem = await infoSaler.render(sellerId, town);
     const productBarItem = await productBar.render(
@@ -64,8 +71,10 @@ const productDetail = {
     const view = `<div class="page product-detail">
                     ${productHeader}
                     <div class="product-container">
-                      <div>
-                        ${img}
+                      <div class="wrapper">
+                        <div id="slides" class="slides">
+                          ${imageItems}
+                        </div>
                       </div>
                       <div class="text-container">
                         ${myId === sellerId ? statusButton : ''}
@@ -83,7 +92,10 @@ const productDetail = {
 
     return view;
   },
-  afterRender: async () => {},
+  afterRender: async () => {
+    const sliderItems = document.querySelector('.product-detail .slides');
+    if (sliderItems.children.length > 1) slide(sliderItems);
+  },
 };
 
 export default productDetail;
