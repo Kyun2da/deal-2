@@ -15,7 +15,7 @@ const productBar = {
       <div class="product-bar">
         ${heartIcon}
         <span class="price">
-          ${price}원
+          ${price.toLocaleString()}원
         </span>
         ${mediumButton}
       </div>
