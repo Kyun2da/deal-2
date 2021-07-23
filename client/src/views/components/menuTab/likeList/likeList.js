@@ -1,5 +1,6 @@
 import data from '../../../../mockup/likeList.json';
 import productListItem from '../../productListItem/productListItem';
+import commingSoonModal from '../../commingSoonModal';
 
 const likeList = {
   render: async () => {
@@ -19,9 +20,11 @@ const likeList = {
         likeCount
       );
     }
+    const commingSoonModalItem = await commingSoonModal.render();
     const view = `<div class="page">
                     <div>
                       ${likeListComponent}
+                      ${commingSoonModalItem}
                     </div>
                   </div>`;
 
