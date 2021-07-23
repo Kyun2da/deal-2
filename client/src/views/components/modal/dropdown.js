@@ -3,6 +3,7 @@ import dropdownElement from './dropdownElement';
 
 const dropdown = {
   render: async (children) => {
+    children.unshift('전체');
     children.push('내 동네 설정하기');
     let childNodes = '';
     for (const child of children) {
@@ -22,6 +23,10 @@ const dropdown = {
     const $dropdownElements = Array.from(
       $mainDropdown.querySelectorAll('.main-dropdown-element')
     );
+    $dropdownElements.shift().addEventListener('click', () => {
+      localStorage.removeItem('town');
+      window.location.href = '#/';
+    });
     $dropdownElements.pop().addEventListener('click', () => {
       window.location.href = '#/town';
     });
