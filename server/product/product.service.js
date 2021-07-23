@@ -86,4 +86,22 @@ const insertProduct = async ({
   }
 };
 
-module.exports = { selectDetailProduct, selectProduct, insertProduct };
+const deleteDetailProduct = async (id) => {
+  try {
+    const deleteProductSql = `DELETE FROM product WHERE idx=?`;
+    const connection = await db.getConnection(async (conn) => conn);
+    const [product] = await connection.query(deleteProductSql, [id]);
+    connection.release();
+    return { success: true, result: product };
+  } catch (err) {
+    console.error(err);
+    return { success: false, error: err };
+  }
+};
+
+module.exports = {
+  selectDetailProduct,
+  selectProduct,
+  insertProduct,
+  deleteDetailProduct,
+};

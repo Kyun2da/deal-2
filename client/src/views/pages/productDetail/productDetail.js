@@ -118,6 +118,9 @@ const productDetail = {
     if (kebabIcon) {
       kebabIcon.addEventListener('click', async (e) => {
         e.stopPropagation();
+        const url = window.location.href.split('/');
+        const deleteIdx = url[url.length - 1];
+        localStorage.setItem('deleteIdx', deleteIdx);
         productDropdownItem.classList.toggle('active');
       });
     }
@@ -128,6 +131,8 @@ const productDetail = {
         productDropdownItem.classList.remove('active');
       }
     });
+
+    await productDropdown.afterRender();
   },
 };
 
