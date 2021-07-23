@@ -39,7 +39,17 @@ const api = {
       .catch((err) => Promise.reject(err));
   },
 
-  delete: () => {},
+  delete: (url) => {
+    return fetch(`${BASE_URL}${url}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((res) => res.json())
+      .then((json) => Promise.resolve(json))
+      .catch((err) => Promise.reject(err));
+  },
 
   postImage: (url, formData) => {
     return fetch(`${BASE_URL}${url}`, {
