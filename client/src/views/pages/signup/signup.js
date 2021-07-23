@@ -20,12 +20,12 @@ const login = {
     );
     const idInput = await textInput.render(
       'large-input',
-      '아이디를 입력하세요',
+      '영문, 숫자만 사용 5자 이상 20자 이하',
       'id'
     );
     const townInput = await textInput.render(
       'large-input',
-      '시·구 제외, 동만 입력',
+      '시·구 제외, 동만 입력 ex) 역삼동',
       'town1'
     );
     const signupButton = await button.render('button-large', '회원가입', true);
