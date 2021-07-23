@@ -10,7 +10,7 @@ const addImgButton = {
     );
     const view = `
         <label class="add-img-btn">
-            <input type="file" multiple class="input-file" />
+            <input type="file" multiple class="input-file" accept="image/jpeg, image/jpg, image/png" />
             ${imgIcon}
             <div>${count}/10</div>
         </label>
