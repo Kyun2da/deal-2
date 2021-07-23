@@ -45,8 +45,8 @@ const sellList = {
     const view = `<div class="page">
                     <div class="product-list">
                       ${sellListComponent}
-                      ${productDropdownItem}
                     </div>
+                    ${productDropdownItem}
                   </div>
     `;
 
@@ -63,8 +63,11 @@ const sellList = {
         const icon = item.querySelector('.right-icon');
         icon.addEventListener('click', (e) => {
           e.stopPropagation();
+          const productitem = e.target.closest('.item-container');
+          const deleteIdx = productitem.getAttribute('name');
+          localStorage.setItem('deleteIdx', deleteIdx);
           productDropdownItem.classList.toggle('active');
-          productDropdownItem.style.top = `${e.clientY - 450}px`;
+          productDropdownItem.style.top = `${e.clientY - 920}px`;
         });
       }
     });
@@ -75,6 +78,8 @@ const sellList = {
         productDropdownItem.classList.remove('active');
       }
     });
+
+    await productDropdown.afterRender();
   },
 };
 

@@ -1,3 +1,4 @@
+import api from '../../../apis';
 import deleteTown from '../../../services/town/deleteTown';
 import './alert.css';
 
@@ -36,7 +37,14 @@ const alert = {
     });
     const $confirmButton = document.querySelector('.confirm-button');
     $confirmButton.addEventListener('click', async () => {
-      deleteTown(calledIndex);
+      const page = document.querySelector('.page.town');
+      if (page) {
+        deleteTown(calledIndex);
+      } else {
+        const deleteIdx = localStorage.getItem('deleteIdx');
+        await api.delete(`/product/${deleteIdx}`);
+        window.location.href = '#/';
+      }
     });
   },
 };
