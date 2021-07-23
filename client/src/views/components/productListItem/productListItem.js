@@ -68,7 +68,7 @@ const productListItem = {
                             <div>
                                 <div class="title">${title}</div>
                                 <div class="loc-time">${town} ∙ ${createdAt}</div>
-                                <div class="price">${price}</div>
+                                <div class="price">${price.toLocaleString()}원</div>
                             </div>
                             <div class="right-icon">
                                 ${topRightIcon}
