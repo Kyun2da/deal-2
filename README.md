@@ -1,7 +1,7 @@
 ![image](https://user-images.githubusercontent.com/82671736/126855418-fdc63820-1f3b-4798-b003-054652545193.png)
 <p>
   <h3> frontend </h3>
-  <img alt="javascript" src="https://img.shields.io/badge/vaniila-javascript-lightgrey" />
+  <img alt="javascript" src="https://img.shields.io/badge/vanilla-JavaScript-lightgrey" />
   <h3> backend </h3>
   <img alt="Node.js" src="https://img.shields.io/badge/Node.js-gray?logo=Node.js&logoColor=green" />
 </p>
